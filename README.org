@@ -1,0 +1,88 @@
+* Rangoli Emacs
+** Introduction
+Rangoli Emacs is an Emacs configuration.
+You can use this as a starting point, and personalize and add your own desired functionality.
+** Goal
+Make a /holy/ /minimal/ /readable/ alternative to spacemacs and doom-emacs.
+** Why?
+- Emacs, not vim :: I tried very hard to get used to evil-mode on top of emacs, but I just find the experience of two different ways of working very confusing, for example, I use OrgMode 90% of the time I'm using Emacs, and editing that is in the Emacs way, and then everything else such as navigating and reading codebases is in the evil-mode way. I just couldn't come to terms with this. I wanted something like spacemacs or doom-emacs but /as/ Emacs, not as vim.
+- Minimal :: As much as I liked using [[https://youtu.be/I2C6QTtxfe8?t=248][persp-mode & layouts]], I felt just using multiple frames (GUI windows) was a simpler equivalent without adding that much more complexity. I wanted a distribution that was minimal enough that I could read the entire codebase. This also meant not having every permutation of possible features, e.g. supporting both helm and ivy. Just pick one, and optimize on it.
+- Readable :: I have [[https://github.com/syl20bnr/spacemacs/commits/develop?author=swaroopch][contributed a few pull requests to spacemacs in the past]] (including the commonly used [[https://github.com/syl20bnr/spacemacs/commit/6798c5be85017ecbfb80d11e6999b49a4d0fa0cb][system-info command]]), but over time, I realized that I couldn't debug my own issues because I struggled to read spacemacs codebase. I really wish it was more simpler and readable. I guess this is the [[http://winestockwebdesign.com/Essays/Lisp_Curse.html][curse of Lisp]] in action again.
+- Contribute to packages :: Many a time, I wish to fix or improve the packages used by the configuration I'm using, and that's [[https://www.reddit.com/r/emacs/comments/at3cnr/what_is_the_best_workflow_to_contributed_to_emacs/][usually not simple to achieve]] and maintain a reproducible config at the same time. This is where I find [[https://github.com/raxod502/straight.el][straight.el]] promising, and I wanted to build a configuration based on that. I love the [[https://github.com/raxod502/straight.el/blob/develop/README.md#but-what-about-my-fork-of-obscure-el-package][forking repo option]].
+
+Some more details:
+
+- Yes, I know that spacemacs has holy-mode, but the other points above still remain!
+- Yes, I know there are others such as prelude, but I wanted something that had the excellent hierarchical menu that spacemacs revolutionized, I wanted most commands under =M-m= (leader key) and =M-n= (major-mode leader key).
+- Also, I wanted all programming-related functionality to be /LSP-centric/. [[https://github.com/emacs-lsp/lsp-mode/blob/master/README.org#supported-languages][LSP is awesome]].
+** Why the name?
+Because rangoli, the art form, uses simple ingredients, uses simple structure, is colorful, is drawn from scratch, can be easily personalized, and can be as simple or as elaborate as /you/ want it to be.
+
+[[Https://en.wikipedia.org/wiki/Rangoli][From the Wikipedia page]]:
+
+#+begin_quote
+Rangoli is an art form, originating in the Indian subcontinent, in which patterns are created on the floor or the ground using materials such as colored rice, dry flour, colored sand or flower petals. It is usually made during Diwali or Tihar, Onam, Pongal and other Hindu festivals in the Indian subcontinent. Designs are passed from one generation to the next, keeping both the art form and the tradition alive.
+
+The purpose of rangoli is decoration, and it is thought to bring good luck. Design depictions may also vary as they reflect traditions, folklore, and practices that are unique to each area.
+
+...
+
+Rangoli designs can be simple geometric shapes, deity impressions, or flower and petal shapes (appropriate for the given celebrations), but they can also be very elaborate designs crafted by numerous people.
+#+end_quote
+
+Here's one example:
+
+[[documentation/rangoli_example.jpg]]
+
+([[https://search.creativecommons.org/photos/2263bd96-2a4e-4232-b852-e1a136900c67][photo reused under Creative Commons BY-NC-SA 2.0 license]])
+
+Also, [[https://en.wikipedia.org/wiki/Rangoli][from the Wikipedia page]]:
+
+#+BEGIN_QUOTE
+In Maharashtra and Karnataka, rangolis are drawn on the doors of homes so that evil[1] forces attempting to enter are repelled.
+#+END_QUOTE
+
+[1] read "evil" as "evil-mode"!
+
+Just kidding. I love what the evil-mode community has achieved and full respects to them.
+** Install
+1. Install Emacs
+
+2. Get this repository
+
+   #+begin_src sh
+     git clone https://gitlab.com/swaroopch/rangoli-emacs ~/.emacs.d
+   #+end_src
+
+3. Install font
+
+   #+begin_src sh
+     # Ubuntu Linux
+     sudo apt install fonts-noto-mono
+
+     # macOS
+     brew cask install font-noto-mono
+   #+end_src
+
+4. Start Emacs!
+
+5. Run some setup commands
+
+   - =M-x all-the-icons-install-fonts=
+** Documentation
+*** Getting started
+- TODO Everything is under =M-m= and =M-n=.
+** Personalization
+You can create your own personal config at =~/.rangoli-emacs.d/init.el=.
+
+Make sure to enable many of the optional features included with the base =rangoli-emacs= configuration.
+
+For example, I have /my personal configuration/ in the repository [[https://gitlab.com/swaroopch/rangoli-emacs-personal][rangoli-emacs-personal]] which I use via:
+
+#+begin_src sh
+  git clone https://gitlab.com/swaroopch/rangoli-emacs-personal.git ~/.rangoli-emacs-personal
+#+end_src
+** Caveats
+*** Operating System
+- Tested on Ubuntu Linux 19.04 ([[https://system76.com/pop][Pop! OS]]) and macOS 10.14.
+- Windows is not supported. We welcome community contributions!
