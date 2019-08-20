@@ -64,6 +64,8 @@
 (rangoli/declare-prefix "o" "orgmode")
 (rangoli/declare-prefix "p" "project")
 (rangoli/declare-prefix "q" "quit")
+(rangoli/declare-prefix "s" "search")
+(rangoli/declare-prefix "t" "text")
 (rangoli/declare-prefix "w" "window")
 (rangoli/declare-prefix "x" "syntax")
 (rangoli/declare-prefix "T" "theme")

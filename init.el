@@ -44,6 +44,7 @@
 (require 'rangoli-websearch)
 (require 'rangoli-emoji)
 (require 'rangoli-reading)
+(require 'rangoli-text)
 
 ;; You probably /do not/ want these
 (require 'swa-org)
