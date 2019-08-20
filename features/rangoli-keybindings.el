@@ -15,8 +15,6 @@
 (global-set-key (kbd rangoli/leader-key) 'rangoli/leader-key-map)
 
 (defvar rangoli/local-leader-key "M-n")
-(define-prefix-command 'rangoli/local-leader-key-map)
-(global-set-key (kbd rangoli/local-leader-key) 'rangoli/local-leader-key-map)
 
 (setq which-key-echo-keystrokes 0.02
       echo-keystrokes 0.02
