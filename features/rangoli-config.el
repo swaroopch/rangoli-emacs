@@ -15,6 +15,11 @@
   (f-expand "~/Tresors/inbox/")
   "/Private/ inbox directory where files are synced, with end-to-end encryption, to the cloud.")
 
+;; I use a separate repository for highly-specific elisp code.
+(defvar rangoli/private-emacs-config-dir
+  (f-expand "~/.rangoli-emacs-private/")
+  "/Private/ emacs repository.")
+
 (provide 'rangoli-config)
 ;; rangoli-config.el ends here
 
