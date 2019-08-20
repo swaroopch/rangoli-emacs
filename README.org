@@ -69,9 +69,10 @@ Just kidding. I love what the evil-mode community has achieved and full respects
 5. Run some setup commands
 
    - =M-x all-the-icons-install-fonts=
-** Documentation
-*** Getting started
-- TODO Everything is under =M-m= and =M-n=.
+** Key bindings
+NOTE: =M= stands for meta which is =alt= / =option= key on your keyboard.
+
+The magic is that most keys are under =M-m=, and major mode-specific keys are under =M-n=.
 ** Personalization
 You can create your own personal config at =~/.rangoli-emacs.d/init.el=.
 
