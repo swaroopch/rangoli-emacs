@@ -377,7 +377,7 @@
     ;; Terminal
     "dark"))
 
-(defvar rangoli/theme-type (rangoli/theme-light-or-dark?) "light or dark.")
+(defvar rangoli/theme-type nil "light or dark.")
 
 (defun rangoli/load-theme-light ()
   (interactive)
@@ -393,7 +393,7 @@
   (when (eq system-type 'darwin)
     (modify-all-frames-parameters '((ns-transparent-titlebar . t) (ns-appearance . dark)))))
 
-(if (s-equals? "light" rangoli/theme-type)
+(if (s-equals? "light" (rangoli/theme-light-or-dark?))
     (rangoli/load-theme-light)
   (rangoli/load-theme-dark))
 
