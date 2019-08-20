@@ -247,6 +247,7 @@
 
 (rangoli/set-leader-key "w =" 'balance-windows-area)
 (rangoli/set-leader-key "w d" 'delete-window)
+(rangoli/set-leader-key "w f" 'toggle-frame-maximized)
 (rangoli/set-leader-key "w m" 'delete-other-windows)
 (rangoli/set-leader-key "w s" 'split-window-below)
 (rangoli/set-leader-key "w v" 'split-window-right)
