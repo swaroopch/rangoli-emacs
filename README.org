@@ -74,14 +74,50 @@ NOTE: =M= stands for meta which is =alt= / =option= key on your keyboard.
 
 The magic is that most keys are under =M-m=, and major mode-specific keys are under =M-n=.
 ** Personalization
-You can create your own personal config at =~/.rangoli-emacs.d/init.el=.
+There are two options:
 
-Make sure to enable many of the optional features included with the base =rangoli-emacs= configuration.
+*** Fork the repo
+You can make a personal copy of this repository by [[https://docs.gitlab.com/ee/workflow/forking_workflow.html#creating-a-fork][forking the repository]], and then customize it however you wish!
 
-For example, I have /my personal configuration/ in the repository [[https://gitlab.com/swaroopch/rangoli-emacs-personal][rangoli-emacs-personal]] which I use via:
+Preferably, add your own personal modules, so that when you want to pull in recent changes from this base repository, you will not get conflicts.
+*** Create your own emacs configuration
+You can create your own emacs configuration, and call whichever modules from this base repository that you wish.
 
-#+begin_src sh
-  git clone https://gitlab.com/swaroopch/rangoli-emacs-personal.git ~/.rangoli-emacs-personal
+For example, assuming you have cloned /this/ repository to =~/rangoli-emacs=, here's a minimal =~/.emacs.d/init.el=:
+
+#+begin_src elisp
+  ;;; Straight bootstrap
+  ;; https://github.com/raxod502/straight.el
+
+  (setq straight-repository-branch "develop"
+        straight-enable-use-package-integration nil)
+
+  (defvar bootstrap-version)
+  (let ((bootstrap-file
+         (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+        (bootstrap-version 5))
+    (unless (file-exists-p bootstrap-file)
+      (with-current-buffer
+          (url-retrieve-synchronously
+           "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+           'silent 'inhibit-cookies)
+        (goto-char (point-max))
+        (eval-print-last-sexp)))
+    (load bootstrap-file nil 'nomessage))
+
+  ;;; Features
+
+  (add-to-list 'load-path "~/rangoli-emacs/features/")
+
+  ;; Use only what you want from rangoli-emacs
+  (require 'rangoli-core)
+  (require 'rangoli-config)
+  (require 'rangoli-keybindings)
+  (require 'rangoli-ui)
+  (require 'rangoli-org)
+  (require 'rangoli-markdown)
+
+  ;; Add whatever functionality you wish!
 #+end_src
 ** Caveats
 *** Operating System
