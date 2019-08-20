@@ -24,6 +24,7 @@
 (straight-use-package 'ivy-yasnippet)
 (straight-use-package 'vlf)
 (straight-use-package 'annotate)
+(straight-use-package 'restart-emacs)
 
 ;;; Require Common Packages
 
@@ -239,6 +240,7 @@
 (rangoli/set-leader-key "o c" 'org-capture "capture")
 
 (rangoli/set-leader-key "q q" 'save-buffers-kill-terminal)
+(rangoli/set-leader-key "q r" 'restart-emacs)
 
 (rangoli/set-leader-key "a d c" 'calendar "show calendar")
 (rangoli/set-leader-key "a d w" 'display-time-world "show world time")
