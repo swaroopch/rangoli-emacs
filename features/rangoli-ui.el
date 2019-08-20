@@ -379,18 +379,34 @@
 
 (defvar rangoli/theme-type (rangoli/theme-light-or-dark?) "light or dark.")
 
+(defun rangoli/load-theme-light ()
+  (interactive)
+  (setq rangoli/theme-type "light")
+  (counsel-load-theme-action (symbol-name rangoli/default-theme-light))
+  (when (eq system-type 'darwin)
+    (modify-all-frames-parameters '((ns-transparent-titlebar . t) (ns-appearance . light)))))
+
+(defun rangoli/load-theme-dark ()
+  (interactive)
+  (setq rangoli/theme-type "dark")
+  (counsel-load-theme-action (symbol-name rangoli/default-theme-dark))
+  (when (eq system-type 'darwin)
+    (modify-all-frames-parameters '((ns-transparent-titlebar . t) (ns-appearance . dark)))))
+
 (if (s-equals? "light" rangoli/theme-type)
-    (load-theme rangoli/default-theme-light t)
-  (load-theme rangoli/default-theme-dark t))
+    (rangoli/load-theme-light)
+  (rangoli/load-theme-dark))
 
-;; brew info emacs-plus
-(when (eq system-type 'darwin)
-  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+;;; Theme switcher
+
+(defun rangoli/theme-cycle ()
+  (interactive)
   (if (s-equals? "light" rangoli/theme-type)
-      (add-to-list 'default-frame-alist '(ns-appearance . light))
-    (add-to-list 'default-frame-alist '(ns-appearance . dark))))
+      (rangoli/load-theme-dark)
+    (rangoli/load-theme-light)))
 
-(rangoli/set-leader-key "T s" 'counsel-load-theme)
+(rangoli/set-leader-key "T n" 'rangoli/theme-cycle "next")
+(rangoli/set-leader-key "T s" 'counsel-load-theme "switch")
 
 ;;; Frame size
 
