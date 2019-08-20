@@ -32,7 +32,7 @@ Rangoli designs can be simple geometric shapes, deity impressions, or flower and
 
 Here's one example:
 
-[[documentation/rangoli_example.jpg]]
+[[file:documentation/rangoli_example.jpg]]
 
 ([[https://search.creativecommons.org/photos/2263bd96-2a4e-4232-b852-e1a136900c67][photo reused under Creative Commons BY-NC-SA 2.0 license]])
 
