@@ -64,9 +64,15 @@ Just kidding. I love what the evil-mode community has achieved and full respects
      brew cask install font-noto-mono
    #+end_src
 
-4. Start Emacs!
+4. macOS : Install command for notifications
 
-5. Run some setup commands
+   #+begin_src sh
+   brew install terminal-notifier
+   #+end_src
+
+5. Start Emacs!
+
+6. Run some setup commands
 
    - =M-x all-the-icons-install-fonts=
 ** Key bindings
