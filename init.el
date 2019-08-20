@@ -21,28 +21,34 @@
 
 (add-to-list 'load-path (concat user-emacs-directory "features/"))
 
+;; You probably /do not/ want these
+(require 'swa-theme)
+
 ;; You /will/ need these
 (require 'rangoli-core)
 (require 'rangoli-config)
 (require 'rangoli-keybindings)
 (require 'rangoli-ui)
 
-;; You /may/ need these
+;; You /may/ want these
 (require 'rangoli-org)
 (require 'rangoli-markdown)
-;; (require 'rangoli-git)
-;; (require 'rangoli-projects)
-;; (require 'rangoli-programming)
-;; (require 'rangoli-pdf)
-;; (require 'rangoli-python)
-;; (require 'rangoli-swift)
-;; (require 'rangoli-java)
-;; (require 'rangoli-timer)
-;; (require 'rangoli-websearch)
-;; (require 'rangoli-emoji)
+(require 'rangoli-git)
+(require 'rangoli-projects)
+(require 'rangoli-programming)
+(require 'rangoli-pdf)
+(require 'rangoli-python)
+(require 'rangoli-swift)
+(require 'rangoli-java)
+(require 'rangoli-timer)
+(require 'rangoli-websearch)
+(require 'rangoli-emoji)
+(require 'rangoli-reading)
 
-;;; Personalization
-
-(let ((rangoli-personal-config (f-expand "~/.rangoli-emacs-personal/init.el")))
-  (when (f-exists? rangoli-personal-config)
-    (load rangoli-personal-config)))
+;; You probably /do not/ want these
+(require 'swa-org)
+(require 'swa-bookmarks)
+(require 'swa-personal)
+(let ((rangoli-private-config (f-expand "~/.rangoli-emacs-private/init.el")))
+  (when (f-exists? rangoli-private-config)
+    (load rangoli-private-config)))

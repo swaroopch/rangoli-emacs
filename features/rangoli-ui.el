@@ -90,9 +90,9 @@
  ;; http://pragmaticemacs.com/emacs/dired-human-readable-sizes-and-sort-by-size/
  dired-listing-switches "-alh")
 
-(rangoli/set-leader-key "d b" 'dired-jump "dired for current buffer")
-(rangoli/set-leader-key "d d" 'dired "dired, asks for path")
-(rangoli/set-leader-key "d i" 'image-dired "image-dired, asks for path")
+(rangoli/set-leader-key "f d b" 'dired-jump "dired for current buffer")
+(rangoli/set-leader-key "f d d" 'dired "dired, asks for path")
+(rangoli/set-leader-key "f d i" 'image-dired "image-dired, asks for path")
 
 ;;; Find File actions
 
@@ -240,8 +240,8 @@
 
 (rangoli/set-leader-key "q q" 'save-buffers-kill-terminal)
 
-(rangoli/set-leader-key "t d" 'calendar "show calendar")
-(rangoli/set-leader-key "t w" 'display-time-world "show world time")
+(rangoli/set-leader-key "a d c" 'calendar "show calendar")
+(rangoli/set-leader-key "a d w" 'display-time-world "show world time")
 
 (rangoli/set-leader-key "w =" 'balance-windows-area)
 (rangoli/set-leader-key "w d" 'delete-window)

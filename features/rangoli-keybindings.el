@@ -51,20 +51,20 @@
     (rangoli/declare-prefix-for-mode major-mode key name)))
 
 (rangoli/declare-prefix "a" "application")
+(rangoli/declare-prefix "a d" "date/time")
 (rangoli/declare-prefix "b" "buffer")
 (rangoli/declare-prefix "c" "comment")
-(rangoli/declare-prefix "d" "dired")
 (rangoli/declare-prefix "f" "file")
+(rangoli/declare-prefix "f d" "dired")
 (rangoli/declare-prefix "f e" "emacs")
 (rangoli/declare-prefix "g" "git")
 (rangoli/declare-prefix "i" "insert")
+(rangoli/declare-prefix "k" "user-specific")  ;; reserved for /your/ use
 (rangoli/declare-prefix "o" "orgmode")
 (rangoli/declare-prefix "p" "project")
 (rangoli/declare-prefix "q" "quit")
-(rangoli/declare-prefix "t" "date/time")
 (rangoli/declare-prefix "w" "window")
 (rangoli/declare-prefix "x" "syntax")
-(rangoli/declare-prefix "z" "work")
 (rangoli/declare-prefix "T" "theme")
 
 (provide 'rangoli-keybindings)
