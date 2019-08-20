@@ -5,6 +5,7 @@
 (straight-use-package 'magit)
 (straight-use-package 'gitconfig-mode)
 (straight-use-package 'forge)
+(straight-use-package 'git-link)
 
 ;;; GPG
 ;; https://help.github.com/en/articles/managing-commit-signature-verification
@@ -17,8 +18,8 @@
 ;; https://magit.vc/manual/magit.html
 
 (require 'magit)
-(rangoli/set-leader-key "g s" 'magit-status)
-(rangoli/set-leader-key "g l" 'magit-log-head)
+(rangoli/set-leader-key "g s" 'magit-status "status")
+(rangoli/set-leader-key "g h" 'magit-log-head "history")
 
 ;;; Forge (GitHub, GitLab)
 ;; https://magit.vc/manual/forge.html
@@ -26,6 +27,16 @@
 
 (with-eval-after-load 'magit
   (require 'forge))
+
+;;; Git Link
+
+(require 'git-link)
+(setq git-link-open-in-browser t)
+
+(rangoli/declare-prefix "g l" "link")
+(rangoli/set-leader-key "g l c" 'git-link-commit)
+(rangoli/set-leader-key "g l l" 'git-link)
+(rangoli/set-leader-key "g l h" 'git-link-homepage)
 
 (provide 'rangoli-git)
 ;; rangoli-git.el ends here
