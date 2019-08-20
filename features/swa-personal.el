@@ -21,10 +21,22 @@
 
 ;;; Remove indentation on region
 
-(defun swa/remove-indentation ()
+(defun swa/org-mode-remove-leading-indentation ()
   (interactive)
-  (query-replace-regexp "^\s+" "" nil (region-beginning) (region-end)))
-(rangoli/set-leader-key "b I" 'swa/remove-indentation "remove indentation")
+  (let* ((text (org-get-entry))
+         (first-line (car (s-lines text)))
+         (first-line-trimmed (s-trim-left first-line))
+         (leading-indentation (- (length first-line) (length first-line-trimmed)))
+         (leading-indentation-regexp (s-concat "^" (s-repeat leading-indentation "\s"))))
+    (save-excursion
+      (org-mark-subtree)
+      (goto-char (region-beginning))
+      (while (re-search-forward leading-indentation-regexp (region-end) t)
+        (replace-match ""))
+      (deactivate-mark))))
+
+(rangoli/declare-prefix "k o" "org-mode")
+(rangoli/set-leader-key "k o i" 'swa/org-mode-remove-leading-indentation "remove leading indentation")
 
 (provide 'swa-personal)
 ;; swa-personal.el ends here
