@@ -21,9 +21,6 @@
 
 (add-to-list 'load-path (concat user-emacs-directory "features/"))
 
-;; You probably /do not/ want these
-(require 'swa-theme)
-
 ;; You /will/ need these
 (require 'rangoli-core)
 (require 'rangoli-config)
