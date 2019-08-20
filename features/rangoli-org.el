@@ -304,7 +304,10 @@ body {
             (rangoli/set-local-leader-key "s N" 'widen "widen")
             (rangoli/set-local-leader-key "s r" 'org-refile "refile")
 
-            (rangoli/set-local-leader-key "t" 'org-todo "todo state")
+            (rangoli/declare-prefix-for-mode 'org-mode "t" "toggle")
+            (rangoli/set-local-leader-key "t i" 'org-toggle-inline-images "inline images")
+
+            (rangoli/set-local-leader-key "T" 'org-todo "todo state")
 
             (rangoli/declare-prefix-for-mode 'org-mode "x" "emphasize")
             (rangoli/set-local-leader-key "x b" 'rangoli/org-bold "bold")
