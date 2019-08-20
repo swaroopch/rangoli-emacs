@@ -24,6 +24,7 @@
 ;; You /will/ need these
 (require 'rangoli-core)
 (require 'rangoli-config)
+(require 'rangoli-keybindings)
 (require 'rangoli-ui)
 
 ;; You /may/ need these
