@@ -2,7 +2,6 @@
 
 ;;; Packages
 
-(straight-use-package 'diminish)
 (straight-use-package 'which-key)
 
 ;;; Leader Keys, which-key

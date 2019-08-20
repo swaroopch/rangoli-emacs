@@ -26,34 +26,39 @@
 (setq locale-coding-system 'utf-8)
 (setq default-process-coding-system '(utf-8 . utf-8))
 
-;;; Packages
+;;; Core Packages
 
 ;; strings
 (straight-use-package 's)
+(require 's)
+
 ;; lists
 (straight-use-package 'dash)
+(require 'dash)
+
 ;; hash tables
 (straight-use-package 'ht)
+(require 'ht)
+
 ;; files and directories
 (straight-use-package 'f)
+(require 'f)
+
 ;; date time
 (straight-use-package '(ts :type git :host github :repo "alphapapa/ts.el"))
+(require 'ts)
+
 ;; http requests
 (straight-use-package 'request)
-;; executables path
-(straight-use-package 'exec-path-from-shell)
-
-;;; Require Common Packages
-
-(require 's)
-(require 'dash)
-(require 'ht)
-(require 'f)
-(require 'ts)
 (require 'request)
 
-;;; executables path
+;; executables path
+(straight-use-package 'exec-path-from-shell)
 (exec-path-from-shell-initialize)
+
+;;; Common Packages
+
+(straight-use-package 'diminish)
 
 (provide 'rangoli-core)
 ;; rangoli-core.el ends here
