@@ -4,6 +4,7 @@
 
 (straight-use-package 'org-plus-contrib)
 (straight-use-package 'org-pomodoro)
+(straight-use-package 'toc-org)
 
 ;;; Require libraries
 
@@ -308,6 +309,7 @@ body {
 
             (rangoli/declare-prefix-for-mode 'org-mode "T" "toggle")
             (rangoli/set-local-leader-key "T i" 'org-toggle-inline-images "inline images")
+            (rangoli/set-local-leader-key "T t" 'toc-org-mode "table of contents")
 
             (rangoli/declare-prefix-for-mode 'org-mode "x" "emphasize")
             (rangoli/set-local-leader-key "x b" 'rangoli/org-bold "bold")

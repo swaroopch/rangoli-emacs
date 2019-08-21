@@ -1,4 +1,14 @@
-* Rangoli Emacs
+* Rangoli Emacs                                                                                     :TOC:
+  - [[#introduction][Introduction]]
+  - [[#goal][Goal]]
+  - [[#why][Why?]]
+  - [[#why-the-name][Why the name?]]
+  - [[#install][Install]]
+  - [[#key-bindings][Key bindings]]
+  - [[#personalization][Personalization]]
+  - [[#caveats][Caveats]]
+  - [[#known-issues][Known Issues]]
+
 ** Introduction
 Rangoli Emacs is an Emacs configuration.
 You can use this as a starting point, and personalize and add your own desired functionality.
