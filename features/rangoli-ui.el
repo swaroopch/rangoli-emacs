@@ -425,8 +425,8 @@
       (rangoli/load-theme-dark)
     (rangoli/load-theme-light)))
 
-(rangoli/set-leader-key "T n" 'rangoli/theme-cycle "next")
-(rangoli/set-leader-key "T s" 'counsel-load-theme "switch")
+(rangoli/set-leader-key "T n" 'rangoli/theme-cycle "next theme")
+(rangoli/set-leader-key "T s" 'counsel-load-theme "switch theme")
 
 ;;; Frame size
 
