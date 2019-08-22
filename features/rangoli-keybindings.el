@@ -68,6 +68,7 @@
 (rangoli/declare-prefix "t" "text")
 (rangoli/declare-prefix "w" "window")
 (rangoli/declare-prefix "x" "syntax")
+(rangoli/declare-prefix "z" "zoom")
 (rangoli/declare-prefix "T" "theme")
 
 (provide 'rangoli-keybindings)
