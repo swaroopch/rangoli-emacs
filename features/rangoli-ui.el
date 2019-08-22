@@ -336,25 +336,24 @@
   (interactive)
   (setq rangoli/current-font-size (1+ rangoli/current-font-size))
   (rangoli/set-font rangoli/current-font-name rangoli/current-font-size))
-(rangoli/set-leader-key "z +" 'rangoli/bigger-font-size "bigger font")
 
 (defun rangoli/smaller-font-size ()
   (interactive)
   (setq rangoli/current-font-size (1- rangoli/current-font-size))
   (rangoli/set-font rangoli/current-font-name rangoli/current-font-size))
-(rangoli/set-leader-key "z -" 'rangoli/smaller-font-size "smaller font")
 
 (defun rangoli/reset-font-size ()
   (interactive)
   (setq rangoli/current-font-size rangoli/default-font-size)
   (rangoli/set-font rangoli/current-font-name rangoli/current-font-size))
-(rangoli/set-leader-key "z 0" 'rangoli/reset-font-size "reset font size")
 
-(defun rangoli/show-font ()
-  (interactive)
-  (let ((font-spec (rangoli/font-spec rangoli/current-font-name rangoli/current-font-size)))
-    (message (s-lex-format "Current font : ${font-spec}"))))
-(rangoli/set-leader-key "z h" 'rangoli/show-font "show font")
+(defhydra rangoli/hydra-change-font-size ()
+  "change font size"
+  ("+" rangoli/bigger-font-size "bigger")
+  ("-" rangoli/smaller-font-size "smaller")
+  ("0" rangoli/reset-font-size "reset")
+  ("q" nil "quit"))
+(rangoli/set-leader-key "z" 'rangoli/hydra-change-font-size/body "zoom")
 
 (rangoli/set-font rangoli/current-font-name rangoli/current-font-size)
 
