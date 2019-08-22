@@ -7,6 +7,7 @@
 (straight-use-package 'rainbow-delimiters)
 (straight-use-package 'flycheck)
 (straight-use-package 'company)
+(straight-use-package 'highlight-symbol)
 (straight-use-package 'counsel-tramp)
 (straight-use-package 'vagrant-tramp)
 (straight-use-package 'docker-tramp)
@@ -81,6 +82,21 @@
 (diminish 'company-mode)
 (add-hook 'prog-mode-hook #'company-mode)
 (company-prescient-mode)
+
+;;; highlight-symbol
+
+(require 'highlight-symbol)
+(setq highlight-symbol-idle-delay 0.5)
+(defhydra rangoli/hydra-highlight-symbol ()
+  "highlight-symbol"
+  ("n" highlight-symbol-next "next")
+  ("p" highlight-symbol-prev "previous")
+  ("q" nil "quit"))
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (highlight-symbol-mode)
+            (diminish 'highlight-symbol-mode)
+            (rangoli/set-local-leader-key "h" 'rangoli/hydra-highlight-symbol/body "highlight symbol")))
 
 ;;; tramp
 (rangoli/set-leader-key "f F" 'counsel-tramp "remote file")
