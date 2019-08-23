@@ -195,8 +195,8 @@
           (f-delete rangoli/file-name))
       (error (s-lex-format "File does not exist : ${rangoli/file-name}")))))
 
-(rangoli/set-leader-key "'" 'eshell)
-(rangoli/set-leader-key "\"" 'ielm)
+(rangoli/set-leader-key "'" 'eshell "shell")
+(rangoli/set-leader-key "\"" 'ielm "elisp REPL")
 
 (rangoli/set-leader-key "b b" 'ivy-switch-buffer "switch")
 (rangoli/set-leader-key "b c" 'rangoli/copy-whole-buffer-to-clipboard "copy buffer to clipboard")
