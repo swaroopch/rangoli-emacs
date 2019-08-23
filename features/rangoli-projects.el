@@ -3,16 +3,11 @@
 ;; NOTE: When using counsel, you can insert the value of
 ;; ‘(ivy-thing-at-point)’ by hitting "M-n" in the minibuffer.
 
-;;; Packages
+;;; Projectile
 
 (straight-use-package 'projectile)
 (straight-use-package 'counsel-projectile)
-(straight-use-package 'treemacs)
-(straight-use-package 'treemacs-projectile)
-(straight-use-package 'treemacs-magit)
-(straight-use-package 'deadgrep)
 
-;;; Projectile
 (projectile-mode +1)
 (diminish 'projectile-mode)
 (rangoli/set-leader-key "p" 'projectile-command-map)
@@ -22,8 +17,11 @@
 (counsel-projectile-mode +1)
 
 ;;; Search with ripgrep
-(rangoli/set-leader-key "/" 'counsel-projectile-rg "search")
-(rangoli/set-leader-key "." 'deadgrep "ripgrep")
+
+(straight-use-package 'deadgrep)
+
+(rangoli/set-leader-key "/" 'counsel-projectile-rg "search project")
+(rangoli/set-leader-key "." 'deadgrep "search directory")
 
 (defun rangoli/search-thing-at-point-in-project ()
   (interactive)
@@ -32,6 +30,11 @@
 (rangoli/set-leader-key "*" 'rangoli/search-thing-at-point-in-project "search symbol")
 
 ;;; Treemacs
+
+(straight-use-package 'treemacs)
+(straight-use-package 'treemacs-projectile)
+(straight-use-package 'treemacs-magit)
+
 (rangoli/set-leader-key "f t" 'treemacs)
 (rangoli/set-leader-key "0" 'treemacs-select-window)
 
