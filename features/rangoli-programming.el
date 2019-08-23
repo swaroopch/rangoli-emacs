@@ -109,11 +109,5 @@
 (setq dumb-jump-prefer-searcher 'rg)
 (add-hook 'prog-mode-hook 'dumb-jump-mode)
 
-;;; emacs lisp
-
-(add-hook 'emacs-lisp-mode-hook
-          (lambda ()
-            (rangoli/set-local-leader-key "j" 'counsel-outline "jump")))
-
 (provide 'rangoli-programming)
 ;; rangoli-programming.el ends here
