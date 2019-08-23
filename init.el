@@ -49,6 +49,7 @@
 (require 'rangoli-projects)
 
 (require 'rangoli-programming)
+(require 'rangoli-tramp)
 (require 'rangoli-lsp)
 (require 'rangoli-python)
 (require 'rangoli-swift)
