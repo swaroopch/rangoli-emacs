@@ -57,18 +57,15 @@
       '(("e" "Everything"
 	 ((agenda "")
           (todo "NEXT")
-          (todo "PROJECT")
           (todo "REMEMBER"))
          ((org-agenda-files (rangoli/org-files))))
         ("w" "Work"
 	 ((agenda "")
-          (todo "NEXT")
-          (todo "PROJECT"))
+          (todo "NEXT"))
          ((org-agenda-files (rangoli/org-files-work))))
         ("p" "Personal"
 	 ((agenda "")
           (todo "NEXT")
-          (todo "PROJECT")
           (todo "REMEMBER"))
          ((org-agenda-files (rangoli/org-files-personal))))))
 
