@@ -1,25 +1,23 @@
 ;; rangoli-programming.el --- general programming functionality -*- lexical-binding: t; -*-
 
-;;; Packages
+;;; Language Modes
 
-(straight-use-package 'open-junk-file)
-(straight-use-package 'smartparens)
-(straight-use-package 'rainbow-delimiters)
-(straight-use-package 'flycheck)
-(straight-use-package 'company)
-(straight-use-package 'highlight-symbol)
-(straight-use-package 'company-prescient)
 (straight-use-package 'yaml-mode)
 (straight-use-package 'toml-mode)
 (straight-use-package 'ssh-config-mode)
-(straight-use-package 'dumb-jump)
 
 ;;; Junk file
+
+(straight-use-package 'open-junk-file)
+
 (require 'open-junk-file)
 (setq open-junk-file-format (f-join user-emacs-directory "junk/%Y/%m/%d-%H%M%S."))
 (rangoli/set-leader-key "f J" 'open-junk-file "junk")
 
 ;;; smartparens
+
+(straight-use-package 'smartparens)
+
 (require 'smartparens-config)
 (diminish 'smartparens-mode)
 (add-hook 'prog-mode-hook #'smartparens-strict-mode)
@@ -58,10 +56,15 @@
 (define-key smartparens-mode-map (kbd "M-i") 'sp-change-enclosing)
 
 ;;; rainbow-delimiters
+
+(straight-use-package 'rainbow-delimiters)
+
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;;; flycheck
 ;; https://www.flycheck.org/en/latest/user/quickstart.html
+
+(straight-use-package 'flycheck)
 
 (add-hook 'prog-mode-hook #'flycheck-mode)
 
@@ -71,12 +74,18 @@
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
 
 ;;; company
+
+(straight-use-package 'company)
+(straight-use-package 'company-prescient)
+
 (require 'company)
 (diminish 'company-mode)
 (add-hook 'prog-mode-hook #'company-mode)
 (company-prescient-mode)
 
 ;;; highlight-symbol
+
+(straight-use-package 'highlight-symbol)
 
 (require 'highlight-symbol)
 (setq highlight-symbol-idle-delay 0.5)
@@ -93,12 +102,15 @@
 
 ;;; dumb-jump
 
+(straight-use-package 'dumb-jump)
+
 (require 'dumb-jump)
 (setq dumb-jump-selector 'ivy)
 (setq dumb-jump-prefer-searcher 'rg)
 (add-hook 'prog-mode-hook 'dumb-jump-mode)
 
 ;;; emacs lisp
+
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (rangoli/set-local-leader-key "j" 'counsel-outline "jump")))
