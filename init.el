@@ -40,8 +40,10 @@
 (require 'rangoli-timer)
 (require 'rangoli-websearch)
 (require 'rangoli-emoji)
+
 (require 'rangoli-reading)
 (require 'rangoli-text)
+(require 'rangoli-annotate)
 
 (require 'rangoli-git)
 (require 'rangoli-projects)

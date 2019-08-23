@@ -16,7 +16,6 @@
 (straight-use-package 'recentf)
 (straight-use-package 'winum)
 (straight-use-package 'vlf)
-(straight-use-package 'annotate)
 (straight-use-package 'restart-emacs)
 
 ;;; Require Common Packages
@@ -112,11 +111,6 @@
       recentf-exclude '("/tmp/" "/ssh:"))
 (rangoli/set-leader-key "f r" 'counsel-recentf)
 
-;;; Annotate
-
-(require 'annotate)
-(setq annotate-file (f-join rangoli/home-dir "annotations"))
-
 ;;; General key bindings
 
 (defun rangoli/kill-current-buffer ()
@@ -203,8 +197,6 @@
 
 (rangoli/set-leader-key "'" 'eshell)
 (rangoli/set-leader-key "\"" 'ielm)
-
-(rangoli/set-leader-key "a a" 'annotate-mode "annotate")
 
 (rangoli/set-leader-key "b b" 'ivy-switch-buffer "switch")
 (rangoli/set-leader-key "b c" 'rangoli/copy-whole-buffer-to-clipboard "copy buffer to clipboard")
