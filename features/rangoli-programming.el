@@ -11,11 +11,7 @@
 (straight-use-package 'counsel-tramp)
 (straight-use-package 'vagrant-tramp)
 (straight-use-package 'docker-tramp)
-(straight-use-package 'lsp-mode)
-(straight-use-package 'lsp-ui)
-(straight-use-package 'company-lsp)
 (straight-use-package 'company-prescient)
-(straight-use-package 'dap-mode)
 (straight-use-package 'yaml-mode)
 (straight-use-package 'toml-mode)
 (straight-use-package 'ssh-config-mode)
@@ -98,6 +94,13 @@
             (diminish 'highlight-symbol-mode)
             (rangoli/set-local-leader-key "h" 'rangoli/hydra-highlight-symbol/body "highlight symbol")))
 
+;;; dumb-jump
+
+(require 'dumb-jump)
+(setq dumb-jump-selector 'ivy)
+(setq dumb-jump-prefer-searcher 'rg)
+(add-hook 'prog-mode-hook 'dumb-jump-mode)
+
 ;;; tramp
 (rangoli/set-leader-key "f F" 'counsel-tramp "remote file")
 
@@ -119,53 +122,10 @@
               vc-ignore-dir-regexp
               tramp-file-name-regexp))
 
-;;; LSP (language server protocol)
-;; https://microsoft.github.io/language-server-protocol/specification
-;; https://github.com/emacs-lsp/lsp-mode
-;; https://github.com/emacs-lsp/lsp-ui
-;; https://github.com/tigersoldier/company-lsp
-;; https://github.com/emacs-lsp/dap-mode
-
-(require 'lsp-mode)
-(setq lsp-prefer-flymake nil
-      lsp-auto-guess-root t
-      lsp-restart 'ignore
-      ;; for debugging, see `*lsp-log*' buffer
-      lsp-log-io t
-      lsp-print-performance t)
-(add-hook 'prog-mode-hook #'lsp)
-
-(require 'lsp-ui)
-(add-hook 'lsp-mode-hook #'lsp-ui-mode)
-;; SOMEDAY/MAYBE [2019-06-01] Currently, this renders blank windows
-;; (setq lsp-ui-doc-use-webkit t)
-
-(require 'company-lsp)
-(push 'company-lsp company-backends)
-
-;;; DAP
-
-(dap-mode 1)
-(dap-ui-mode 1)
-
-;;; dumb-jump
-
-(require 'dumb-jump)
-(setq dumb-jump-selector 'ivy)
-(setq dumb-jump-prefer-searcher 'rg)
-(add-hook 'prog-mode-hook 'dumb-jump-mode)
-
 ;;; emacs lisp
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (rangoli/set-local-leader-key "j" 'counsel-outline "jump")))
-
-
-;;; eshell
-;; TODO Fix error `local-set-key: Key sequence M-n l starts with non-prefix key M-n'
-;; (add-hook 'eshell-mode-hook
-;;           '(lambda ()
-;;              (rangoli/set-local-leader-key "l" 'eshell/clear "clear")))
 
 (provide 'rangoli-programming)
 ;; rangoli-programming.el ends here
