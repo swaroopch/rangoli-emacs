@@ -30,6 +30,7 @@
 
 ;; You /may/ want these
 
+(require 'rangoli-ui-theme)
 (require 'rangoli-org)
 (require 'rangoli-markdown)
 (require 'rangoli-pdf)
