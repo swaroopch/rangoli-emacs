@@ -45,14 +45,8 @@
  org-agenda-skip-deadline-if-done t
  org-agenda-skip-deadline-prewarning-if-scheduled t
 
- ;; Agenda window
- org-agenda-window-setup 'only-window
-
  ;; Agenda number of days
  org-agenda-span 3
-
- ;; Agenda display of Habits
- org-habit-graph-column 90
 
  ;; Link to attachments
  org-link-abbrev-alist '(("att" . org-attach-expand-link))
