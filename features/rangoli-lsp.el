@@ -8,9 +8,6 @@
 ;; https://github.com/emacs-lsp/dap-mode
 
 (straight-use-package 'lsp-mode)
-(straight-use-package 'lsp-ui)
-(straight-use-package 'company-lsp)
-
 (require 'lsp-mode)
 (setq lsp-prefer-flymake nil
       lsp-auto-guess-root t
@@ -20,18 +17,22 @@
       lsp-print-performance t)
 (add-hook 'prog-mode-hook #'lsp)
 
+(straight-use-package 'lsp-ui)
 (require 'lsp-ui)
 (add-hook 'lsp-mode-hook #'lsp-ui-mode)
 ;; SOMEDAY/MAYBE [2019-06-01] Currently, this renders blank windows
 ;; (setq lsp-ui-doc-use-webkit t)
 
+(straight-use-package 'company-lsp)
 (require 'company-lsp)
 (push 'company-lsp company-backends)
+
+(straight-use-package 'lsp-treemacs)
+(require 'lsp-treemacs)
 
 ;;; DAP
 
 (straight-use-package 'dap-mode)
-
 (dap-mode 1)
 (dap-ui-mode 1)
 
