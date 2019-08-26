@@ -14,7 +14,7 @@
 (projectile-mode +1)
 (diminish 'projectile-mode)
 (rangoli/set-leader-key "p" 'projectile-command-map)
-(setq projectile-switch-project-action 'projectile-commander)
+(setq projectile-switch-project-action #'projectile-commander)
 (setq projectile-completion-system 'ivy)
 
 ;;; Search with ripgrep
