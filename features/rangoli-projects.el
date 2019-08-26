@@ -6,28 +6,17 @@
 ;;; Projectile
 
 (straight-use-package 'projectile)
-(straight-use-package 'counsel-projectile)
-
 (projectile-mode +1)
 (diminish 'projectile-mode)
 (rangoli/set-leader-key "p" 'projectile-command-map)
-(setq projectile-switch-project-action #'projectile-commander)
+(setq projectile-switch-project-action 'projectile-commander)
 (setq projectile-completion-system 'ivy)
-
-(counsel-projectile-mode +1)
 
 ;;; Search with ripgrep
 
-(straight-use-package 'deadgrep)
-
-(rangoli/set-leader-key "/" 'counsel-projectile-rg "search project")
-(rangoli/set-leader-key "." 'deadgrep "search directory")
-
-(defun rangoli/search-thing-at-point-in-project ()
-  (interactive)
-  (let ((counsel-projectile-rg-initial-input '(ivy-thing-at-point)))
-    (counsel-projectile-rg)))
-(rangoli/set-leader-key "*" 'rangoli/search-thing-at-point-in-project "search symbol")
+(straight-use-package 'ripgrep)
+(rangoli/set-leader-key "/" 'projectile-ripgrep "search project")
+(rangoli/set-leader-key "." 'ripgrep-regexp "search directory")
 
 ;;; Treemacs
 
