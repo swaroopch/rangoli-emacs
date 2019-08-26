@@ -4,6 +4,7 @@
 .lsp-session-*
 /forge-database.sqlite
 /image-dired
+/mspyls
 auto-save-list
 bookmarks
 custom.el
