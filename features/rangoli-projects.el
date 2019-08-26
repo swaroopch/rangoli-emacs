@@ -1,7 +1,12 @@
 ;; rangoli-projects.el --- projects -*- lexical-binding: t; -*-
 
-;; NOTE: When using counsel, you can insert the value of
+;; NOTE: When using ivy/counsel, you can insert the value of
 ;; ‘(ivy-thing-at-point)’ by hitting "M-n" in the minibuffer.
+;; https://oremacs.com/swiper/#key-bindings-that-alter-the-minibuffer-input
+;;
+;; NOTE: When using ivy/counsel, you can convert current completion
+;; session into a buffer by hitting "C-c C-o"
+;; https://oremacs.com/swiper/#saving-the-current-completion-session-to-a-buffer
 
 ;;; Projectile
 

@@ -83,23 +83,6 @@
 (add-hook 'prog-mode-hook #'company-mode)
 (company-prescient-mode)
 
-;;; highlight-symbol
-
-(straight-use-package 'highlight-symbol)
-
-(require 'highlight-symbol)
-(setq highlight-symbol-idle-delay 0.5)
-(defhydra rangoli/hydra-highlight-symbol ()
-  "highlight-symbol"
-  ("n" highlight-symbol-next "next")
-  ("p" highlight-symbol-prev "previous")
-  ("q" nil "quit"))
-(add-hook 'prog-mode-hook
-          (lambda ()
-            (highlight-symbol-mode)
-            (diminish 'highlight-symbol-mode)
-            (rangoli/set-local-leader-key "h" 'rangoli/hydra-highlight-symbol/body "highlight symbol")))
-
 ;;; dumb-jump
 
 (straight-use-package 'dumb-jump)
