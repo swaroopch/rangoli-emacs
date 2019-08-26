@@ -15,6 +15,9 @@
 ;;; Search with ripgrep
 
 (straight-use-package 'ripgrep)
+(def-projectile-commander-method ?i
+  "Run rg (ripgrep) on project."
+    (call-interactively 'projectile-ripgrep))
 (rangoli/set-leader-key "/" 'projectile-ripgrep "search project")
 (rangoli/set-leader-key "." 'ripgrep-regexp "search directory")
 
