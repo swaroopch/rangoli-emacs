@@ -29,8 +29,9 @@
 ;;; virtualenv
 (add-hook 'python-mode-hook
           (lambda ()
-            (rangoli/set-local-leader-key "v" 'pythonic-activate "virtualenv activate")
-            (rangoli/set-local-leader-key "V" 'pythonic-deactivate "virtualenv deactivate")))
+            (rangoli/declare-prefix-for-mode major-mode "v" "virtualenv")
+            (rangoli/set-local-leader-key "v a" 'pythonic-activate "activate")
+            (rangoli/set-local-leader-key "v d" 'pythonic-deactivate "deactivate")))
 
 ;;; DAP
 
