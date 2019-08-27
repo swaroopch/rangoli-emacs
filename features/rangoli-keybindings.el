@@ -28,9 +28,9 @@
   (which-key-add-key-based-replacements
     (concat rangoli/leader-key " " key) name))
 
-(defun rangoli/declare-prefix-for-mode (mode key name)
+(defun rangoli/declare-prefix-for-mode (key name)
   "In major mode MODE, declare prefix KEY as NAME in which-key."
-  (which-key-add-major-mode-key-based-replacements mode
+  (which-key-add-major-mode-key-based-replacements major-mode
     (concat rangoli/local-leader-key " " key) name))
 
 (defun rangoli/set-global-key (key def &optional name)
@@ -49,7 +49,7 @@
   "Add KEY mapped to DEF under local leader key, showing NAME in which-key."
   (local-set-key (kbd (concat rangoli/local-leader-key " " key)) def)
   (when name
-    (rangoli/declare-prefix-for-mode major-mode key name)))
+    (rangoli/declare-prefix-for-mode key name)))
 
 (rangoli/declare-prefix "T" "toggle/theme")
 (rangoli/declare-prefix "a d" "date/time")

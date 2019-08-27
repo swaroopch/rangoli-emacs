@@ -255,18 +255,18 @@ body {
           (lambda ()
             (rangoli/set-local-leader-key "a" 'org-attach "attach")
 
-            (rangoli/declare-prefix-for-mode 'org-mode "c" "clock")
+            (rangoli/declare-prefix-for-mode "c" "clock")
             (rangoli/set-local-leader-key "c k" 'org-clock-cancel "cancel")
             (rangoli/set-local-leader-key "c i" 'org-clock-in "clock in")
             (rangoli/set-local-leader-key "c o" 'org-clock-out "clock out")
             (rangoli/set-local-leader-key "c p" 'org-pomodoro "pomodoro")
             (rangoli/set-local-leader-key "c r" 'org-clock-report "clock report")
 
-            (rangoli/declare-prefix-for-mode 'org-mode "d" "date")
+            (rangoli/declare-prefix-for-mode "d" "date")
             (rangoli/set-local-leader-key "d s" 'org-schedule "schedule")
             (rangoli/set-local-leader-key "d d" 'org-deadline "deadline")
 
-            (rangoli/declare-prefix-for-mode 'org-mode "i" "insert")
+            (rangoli/declare-prefix-for-mode "i" "insert")
             (rangoli/set-local-leader-key "i a" 'rangoli/choose-file-to-move-and-insert-attachment-link "attach, insert link")
             (rangoli/set-local-leader-key "i A" 'rangoli/choose-file-to-move-rename-unique-and-insert-attachment-link "rename, attach, insert link")
             (rangoli/set-local-leader-key "i e" 'counsel-org-entity "entity")
@@ -279,7 +279,7 @@ body {
             (rangoli/set-local-leader-key "l" 'org-store-link "save (l)ink")
             (rangoli/set-local-leader-key "L" 'rangoli/org-insert-last-stored-link "insert (L)ink")
 
-            (rangoli/declare-prefix-for-mode 'org-mode "n" "navigate")
+            (rangoli/declare-prefix-for-mode "n" "navigate")
             (rangoli/set-local-leader-key "n c" 'org-insert-heading-after-current "create")
             (rangoli/set-local-leader-key "n u" 'outline-up-heading "up")
             (rangoli/set-local-leader-key "n n" 'org-forward-heading-same-level "next")
@@ -289,7 +289,7 @@ body {
 
             (rangoli/set-local-leader-key "r" 'org-redisplay-inline-images "redisplay images")
 
-            (rangoli/declare-prefix-for-mode 'org-mode "s" "subtree")
+            (rangoli/declare-prefix-for-mode "s" "subtree")
             (rangoli/set-local-leader-key "s a" 'org-archive-to-archive-sibling "archive to sibling heading")
             (rangoli/set-local-leader-key "s A" 'org-archive-subtree-default "archive to separate file")
             (rangoli/set-local-leader-key "s c" 'org-copy-subtree "copy")
@@ -301,11 +301,11 @@ body {
 
             (rangoli/set-local-leader-key "t" 'org-todo "todo state")
 
-            (rangoli/declare-prefix-for-mode 'org-mode "T" "toggle")
+            (rangoli/declare-prefix-for-mode "T" "toggle")
             (rangoli/set-local-leader-key "T i" 'org-toggle-inline-images "inline images")
             (rangoli/set-local-leader-key "T t" 'toc-org-mode "table of contents")
 
-            (rangoli/declare-prefix-for-mode 'org-mode "x" "emphasize")
+            (rangoli/declare-prefix-for-mode "x" "emphasize")
             (rangoli/set-local-leader-key "x b" 'rangoli/org-bold "bold")
             (rangoli/set-local-leader-key "x c" 'rangoli/org-code "code")
             (rangoli/set-local-leader-key "x i" 'rangoli/org-italic "italic")
@@ -318,7 +318,7 @@ body {
 ;;; Agenda keys
 (add-hook 'org-agenda-mode-hook
           (lambda ()
-            (rangoli/declare-prefix-for-mode 'org-agenda-mode "c" "clock")
+            (rangoli/declare-prefix-for-mode "c" "clock")
             (rangoli/set-local-leader-key "c k" 'org-clock-cancel "clock cancel")
             (rangoli/set-local-leader-key "c i" 'org-clock-in "clock in")
             (rangoli/set-local-leader-key "c o" 'org-clock-out "clock out")
