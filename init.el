@@ -51,6 +51,7 @@
 (require 'rangoli-programming)
 (require 'rangoli-tramp)
 (require 'rangoli-lsp)
+(require 'rangoli-elisp)
 (require 'rangoli-python)
 (require 'rangoli-swift)
 (require 'rangoli-java)
