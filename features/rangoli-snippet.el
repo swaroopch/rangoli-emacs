@@ -21,7 +21,6 @@
 
 (rangoli/set-leader-key "i s" 'ivy-yasnippet "snippet")
 
-(global-set-key (kbd "M-/") 'hippie-expand)
 (add-to-list 'hippie-expand-try-functions-list ' yas-hippie-try-expand)
 
 (provide 'rangoli-snippet)
