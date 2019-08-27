@@ -32,26 +32,6 @@
             (rangoli/set-local-leader-key "v" 'pythonic-activate "virtualenv activate")
             (rangoli/set-local-leader-key "V" 'pythonic-deactivate "virtualenv deactivate")))
 
-;;; TODO : LSP + vagrant using tramp
-;; TODO : How to make this work automatically on opening a remote Python file?
-;;
-;; This currently hangs, e.g. see buffer `*lsp-log: pyls-remote:18578*'
-;;
-;; https://github.com/emacs-lsp/lsp-mode#tramp
-;; https://github.com/emacs-lsp/lsp-mode/issues/843
-(defun rangoli/lsp-vagrant-python (vagrant-box-name)
-  (interactive "sVagrantBox: ")
-  (pythonic-activate (s-format "/vagrant:$0:/vagrant/venv/" 'elt (list vagrant-box-name)))
-  (lsp-register-client
-        (make-lsp-client :new-connection (lsp-tramp-connection "python")
-                         :major-modes '(python-mode)
-                         :remote? t
-                         :server-id 'pyls-remote)))
-
-(add-hook 'python-mode-hook
-          (lambda ()
-            (rangoli/set-local-leader-key "l" 'rangoli/lsp-vagrant-python "lsp vagrant")))
-
 ;;; DAP
 
 ;; https://www.reddit.com/r/emacs/comments/bxhod6/where_do_i_find_templates_for_dapmode/eq6rm65
