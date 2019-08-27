@@ -30,8 +30,20 @@
   (rangoli/set-local-leader-key "= b" #'lsp-format-buffer)
   (rangoli/set-local-leader-key "= r" #'lsp-format-region)
 
+  (rangoli/declare-prefix-for-mode major-mode "b" "backend")
+  (rangoli/set-local-leader-key "b a" #'lsp-execute-code-action)
+  (rangoli/set-local-leader-key "b d" #'lsp-describe-session)
+  (rangoli/set-local-leader-key "b k" #'lsp-disconnect)
+  (rangoli/set-local-leader-key "b l" #'lsp-workspace-show-log)
+  (rangoli/set-local-leader-key "b r" #'lsp-workspace-restart)
+  (rangoli/set-local-leader-key "b s" #'lsp-workspace-shutdown)
+
+  (rangoli/declare-prefix-for-mode major-mode "d" "document")
+  (rangoli/set-local-leader-key "d h" #'lsp-document-highlight)
+
   (rangoli/declare-prefix-for-mode major-mode "g" "goto")
   (rangoli/set-local-leader-key "g M" #'lsp-ui-imenu)
+  (rangoli/set-local-leader-key "g c" #'lsp-find-declaration)
   (rangoli/set-local-leader-key "g d" #'xref-find-definitions)
   (rangoli/set-local-leader-key "g e" #'lsp-treemacs-errors-list)
   (rangoli/set-local-leader-key "g i" #'lsp-find-implementation)
@@ -42,24 +54,26 @@
   (rangoli/declare-prefix-for-mode major-mode "h" "help")
   (rangoli/set-local-leader-key "h h" #'lsp-describe-thing-at-point)
 
-  (rangoli/declare-prefix-for-mode major-mode "b" "backend")
-  (rangoli/set-local-leader-key "b a" #'lsp-execute-code-action)
-  (rangoli/set-local-leader-key "b d" #'lsp-describe-session)
-  (rangoli/set-local-leader-key "b r" #'lsp-workspace-restart)
-  (rangoli/set-local-leader-key "b s" #'lsp-workspace-shutdown)
-
   (rangoli/declare-prefix-for-mode major-mode "r" "refactor")
+  (rangoli/set-local-leader-key "r i" #'lsp-organize-imports)
   (rangoli/set-local-leader-key "r r" #'lsp-rename)
+
+  (rangoli/declare-prefix-for-mode major-mode "s" "select")
+  (rangoli/set-local-leader-key "s e" #'lsp-extend-selection)
+
+  (rangoli/declare-prefix-for-mode major-mode "F" "folders")
+  (rangoli/set-local-leader-key "F a" #'lsp-workspace-folders-add)
+  (rangoli/set-local-leader-key "F o" #'lsp-workspace-folders-open)
+  (rangoli/set-local-leader-key "F r" #'lsp-workspace-folders-remove)
+
+  (rangoli/declare-prefix-for-mode major-mode "F B" "blacklist")
+  (rangoli/set-local-leader-key "F B r" #'lsp-workspace-blacklist-remove)
 
   (rangoli/declare-prefix-for-mode major-mode "T" "toggle")
   (rangoli/set-local-leader-key "T d" #'lsp-ui-doc-mode)
   (rangoli/set-local-leader-key "T l" #'lsp-lens-mode)
   (rangoli/set-local-leader-key "T s" #'lsp-ui-sideline-mode)
-
-  (rangoli/declare-prefix-for-mode major-mode "F" "folders")
-  (rangoli/set-local-leader-key "F a" #'lsp-workspace-folders-add)
-  (rangoli/set-local-leader-key "F o" #'lsp-workspace-folders-open)
-  (rangoli/set-local-leader-key "F r" #'lsp-workspace-folders-remove))
+  )
 
 (add-hook 'lsp-after-open-hook #'rangoli/setup-lsp-keybindings)
 
