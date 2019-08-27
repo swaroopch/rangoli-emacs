@@ -48,7 +48,7 @@
   (rangoli/set-local-leader-key "g e" #'lsp-treemacs-errors-list)
   (rangoli/set-local-leader-key "g i" #'lsp-find-implementation)
   (rangoli/set-local-leader-key "g p" #'xref-pop-marker-stack)
-  (rangoli/set-local-leader-key "g r" #'xref-find-references)
+  (rangoli/set-local-leader-key "g r" #'lsp-find-references)
   (rangoli/set-local-leader-key "g t" #'lsp-find-type-definition)
 
   (rangoli/declare-prefix-for-mode "h" "help")
