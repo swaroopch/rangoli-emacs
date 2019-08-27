@@ -31,6 +31,7 @@
 ;;; Git Link
 
 (require 'git-link)
+(setq git-link-use-commit t)
 (rangoli/declare-prefix "g l" "link")
 (rangoli/set-leader-key "g l c" 'git-link-commit)
 (rangoli/set-leader-key "g l l" 'git-link)
