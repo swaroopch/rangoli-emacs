@@ -6,6 +6,7 @@
 /image-dired
 auto-save-list
 bookmarks
+elpa
 emojis
 eshell
 flycheck_*.el
