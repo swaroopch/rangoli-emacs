@@ -4,7 +4,7 @@
 ;; Useful for reading long READMEs.
 
 (straight-use-package 'olivetti)
-(setq-default olivetti-body-width 100)
+(setq-default olivetti-body-width 150)
 (rangoli/set-leader-key "t o" 'olivetti-mode)
 
 (provide 'rangoli-reading)
