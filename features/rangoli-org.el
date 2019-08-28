@@ -46,7 +46,7 @@
  org-agenda-skip-deadline-prewarning-if-scheduled t
 
  ;; Agenda number of days
- org-agenda-span 3
+ org-agenda-span 2
 
  ;; Link to attachments
  org-link-abbrev-alist '(("att" . org-attach-expand-link))
