@@ -92,5 +92,17 @@
 (setq dumb-jump-prefer-searcher 'rg)
 (add-hook 'prog-mode-hook 'dumb-jump-mode)
 
+;;; highlight todos
+
+(straight-use-package 'hl-todo)
+(add-hook 'prog-mode-hook #'hl-todo-mode)
+(defhydra rangoli/hl-todo-navigate ()
+  "navigate todos"
+  ("n" hl-todo-next "next")
+  ("p" hl-todo-previous "previous")
+  ("o" hl-todo-occur "occur" :exit t)
+  ("q" nil "quit"))
+(rangoli/set-leader-key "s t" 'rangoli/hl-todo-navigate/body "navigate todos")
+
 (provide 'rangoli-programming)
 ;; rangoli-programming.el ends here
