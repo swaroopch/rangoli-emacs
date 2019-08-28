@@ -24,7 +24,7 @@
   "Run rg (ripgrep) on project."
     (call-interactively 'projectile-ripgrep))
 (rangoli/set-leader-key "/" 'projectile-ripgrep "search project")
-(rangoli/set-leader-key "." 'ripgrep-regexp "search directory")
+(rangoli/set-leader-key "." 'counsel-rg "search directory")
 
 ;;; Treemacs
 
