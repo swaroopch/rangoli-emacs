@@ -270,6 +270,7 @@ body {
             (rangoli/set-local-leader-key "i a" 'rangoli/choose-file-to-move-and-insert-attachment-link "attach, insert link")
             (rangoli/set-local-leader-key "i A" 'rangoli/choose-file-to-move-rename-unique-and-insert-attachment-link "rename, attach, insert link")
             (rangoli/set-local-leader-key "i e" 'counsel-org-entity "entity")
+            (rangoli/set-local-leader-key "i f" 'org-set-effort "effort")
             (rangoli/set-local-leader-key "i n" 'org-add-note "note")
             (rangoli/set-local-leader-key "i p" 'org-set-property "property")
             (rangoli/set-local-leader-key "i t" 'counsel-org-tag "tag")
