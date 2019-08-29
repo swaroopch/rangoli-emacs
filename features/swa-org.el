@@ -82,6 +82,13 @@
                    "Inbox")
              "* %?\n%U\n%i\n")
 
+       (list "l"
+             "Later reading"
+             'entry
+             (list 'file+headline org-default-notes-file
+                   "To Read")
+             "* %?\n")
+
        (list "w"
              "Work"
              'entry
