@@ -3,6 +3,8 @@
 ;;; Packages
 
 (straight-use-package 'org-plus-contrib)
+;; https://github.com/raxod502/straight.el/issues/352#issuecomment-460069774
+(straight-use-package '(org :local-repo nil))
 (straight-use-package 'org-pomodoro)
 (straight-use-package 'toc-org)
 
