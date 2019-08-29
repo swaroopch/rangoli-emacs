@@ -237,6 +237,18 @@ body {
     (interactive)
     (org-open-at-point '(16)))
 
+(defun rangoli/org-remove-schedule ()
+  (interactive)
+  ;; pass one universal argument
+  (let ((current-prefix-arg '(4)))
+    (call-interactively 'org-schedule)))
+
+(defun rangoli/org-remove-deadline ()
+  (interactive)
+  ;; pass one universal argument
+  (let ((current-prefix-arg '(4)))
+    (call-interactively 'org-deadline)))
+
 ;; Already used in core-ui.el : "o a", "o c"
 (rangoli/set-leader-key "o h" 'counsel-org-agenda-headlines "jump to headline")
 (rangoli/set-leader-key "o j" 'rangoli/jump-to-org-file "jump to org file")
@@ -266,7 +278,9 @@ body {
 
             (rangoli/declare-prefix-for-mode "d" "date")
             (rangoli/set-local-leader-key "d s" 'org-schedule "schedule")
+            (rangoli/set-local-leader-key "d S" 'rangoli/org-remove-schedule "remove schedule")
             (rangoli/set-local-leader-key "d d" 'org-deadline "deadline")
+            (rangoli/set-local-leader-key "d D" 'rangoli/org-remove-deadline "remove deadline")
 
             (rangoli/declare-prefix-for-mode "i" "insert")
             (rangoli/set-local-leader-key "i a" 'rangoli/choose-file-to-move-and-insert-attachment-link "attach, insert link")
