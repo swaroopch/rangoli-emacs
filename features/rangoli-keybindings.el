@@ -60,6 +60,7 @@
 (rangoli/declare-prefix "f e" "emacs")
 (rangoli/declare-prefix "f" "file")
 (rangoli/declare-prefix "g" "git")
+(rangoli/declare-prefix "g e" "elisp")
 (rangoli/declare-prefix "i" "insert")
 (rangoli/declare-prefix "k" "user-specific")  ;; reserved for /your/ use
 (rangoli/declare-prefix "o" "orgmode")
