@@ -42,10 +42,11 @@
  ;; http://orgmode.org/worg/org-faq.html#agenda-wrong-time-of-day
  org-agenda-search-headline-for-time nil
 
- ;; Don't show DONE in agenda
+ ;; Don't show DONE in agenda, but toggle with log mode
  org-agenda-skip-scheduled-if-done t
  org-agenda-skip-deadline-if-done t
  org-agenda-skip-deadline-prewarning-if-scheduled t
+ org-agenda-log-mode-items '(closed clock state)
 
  ;; Agenda number of days
  org-agenda-span 2
