@@ -23,8 +23,7 @@
 (def-projectile-commander-method ?i
   "Run rg (ripgrep) on project."
     (call-interactively 'projectile-ripgrep))
-(rangoli/set-leader-key "/" 'projectile-ripgrep "search project")
-(rangoli/set-leader-key "." 'counsel-rg "search directory")
+(rangoli/set-leader-key "/" 'counsel-rg "search")
 
 ;;; Treemacs
 
