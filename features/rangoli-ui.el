@@ -90,6 +90,7 @@
 ;;; Find File actions
 
 (rangoli/set-leader-key "f f" 'counsel-find-file)
+(rangoli/set-leader-key "f ." 'ffap)
 
 ;; https://www.emacswiki.org/emacs/InsertFileName
 (ivy-add-actions t
