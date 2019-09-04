@@ -52,7 +52,7 @@
     (rangoli/declare-prefix-for-mode key name)))
 
 (rangoli/declare-prefix "T" "toggle/theme")
-(rangoli/declare-prefix "a d" "date/time")
+(rangoli/declare-prefix "a t" "date/time")
 (rangoli/declare-prefix "a" "application")
 (rangoli/declare-prefix "b" "buffer")
 (rangoli/declare-prefix "c" "comment")

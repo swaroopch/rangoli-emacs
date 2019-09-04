@@ -235,8 +235,8 @@
 (rangoli/set-leader-key "q q" 'save-buffers-kill-terminal)
 (rangoli/set-leader-key "q r" 'restart-emacs)
 
-(rangoli/set-leader-key "a d c" 'calendar "show calendar")
-(rangoli/set-leader-key "a d w" 'display-time-world "show world time")
+(rangoli/set-leader-key "a t c" 'calendar "show calendar")
+(rangoli/set-leader-key "a t w" 'display-time-world "show world time")
 
 (rangoli/set-leader-key "w =" 'balance-windows-area)
 (rangoli/set-leader-key "w d" 'delete-window)

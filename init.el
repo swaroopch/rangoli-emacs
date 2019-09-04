@@ -49,8 +49,9 @@
 (require 'rangoli-projects)
 
 (require 'rangoli-programming)
-(require 'rangoli-tramp)
 (require 'rangoli-lsp)
+(require 'rangoli-docker)
+(require 'rangoli-tramp)
 (require 'rangoli-elisp)
 (require 'rangoli-python)
 (require 'rangoli-swift)
