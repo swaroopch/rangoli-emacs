@@ -17,11 +17,20 @@
    "Major mode for editing GitHub Flavored Markdown files" t)
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 
-;; https://github.com/markedjs/marked
-;; npm install -g marked
 (require 'markdown-mode)
-(when (executable-find "marked")
+
+;; Setup preview command
+(cond
+ ;; brew install cmark-gfm
+ ;; sudo apt install cmark-gfm
+ ((executable-find "cmark-gfm")
+  (setq markdown-command "cmark-gfm"))
+ ;; npm install -g marked
+ ((executable-find "marked")
   (setq markdown-command "marked"))
+ ;; no preview command available
+ (t
+  (error "Markdown preview command unavailable")))
 
 (provide 'rangoli-markdown)
 ;; rangoli-markdown.el ends here
