@@ -17,5 +17,11 @@
    "Major mode for editing GitHub Flavored Markdown files" t)
 (add-to-list 'auto-mode-alist '("README\\.md\\'" . gfm-mode))
 
+;; https://github.com/markedjs/marked
+;; npm install -g marked
+(require 'markdown-mode)
+(when (executable-find "marked")
+  (setq markdown-command "marked"))
+
 (provide 'rangoli-markdown)
 ;; rangoli-markdown.el ends here
