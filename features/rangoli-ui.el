@@ -196,7 +196,14 @@
           (f-delete rangoli/file-name))
       (error (s-lex-format "File does not exist : ${rangoli/file-name}")))))
 
+(defun rangoli/launch-terminal ()
+  (interactive)
+  (pcase system-type
+    ('darwin (start-process "terminal" "*terminal*" "open" "-a" "Terminal"))
+    ('gnu/linux (start-process "terminal" "*terminal*" "gnome-terminal"))))
+
 (rangoli/set-leader-key "'" 'eshell "shell")
+(rangoli/set-leader-key ";" 'rangoli/launch-terminal "terminal")
 (rangoli/set-leader-key "\"" 'ielm "elisp REPL")
 
 (rangoli/set-leader-key "b b" 'ivy-switch-buffer "switch")
