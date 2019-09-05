@@ -71,6 +71,8 @@
 
 (rangoli/declare-prefix "k" "user-specific")  ;; reserved for /your/ use
 
+(rangoli/declare-prefix "m" "bookmarks")
+
 (rangoli/declare-prefix "o" "orgmode")
 
 (rangoli/declare-prefix "p" "project")
