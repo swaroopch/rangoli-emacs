@@ -62,7 +62,6 @@
 (rangoli/declare-prefix "f d" "dired")
 (rangoli/declare-prefix "f e" "emacs")
 
-(rangoli/declare-prefix "g e" "elisp")
 (rangoli/declare-prefix "g" "git")
 
 (rangoli/declare-prefix "i" "insert")

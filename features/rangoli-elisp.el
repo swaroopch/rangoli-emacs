@@ -18,7 +18,7 @@
       ('gitlab (browse-url (s-lex-format "https://gitlab.com/${repo}")))
       (_ (error (s-lex-format "Not implemented yet : ${host}"))))))
 
-(rangoli/set-leader-key "g e o" 'rangoli/elisp-package-website "open website of package")
+(rangoli/set-leader-key "j e" 'rangoli/elisp-package-website "open website of package")
 
 (provide 'rangoli-elisp)
 ;; rangoli-elisp.el ends here
