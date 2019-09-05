@@ -35,7 +35,7 @@
   ("-" rangoli/smaller-font-size "smaller")
   ("0" rangoli/reset-font-size "reset")
   ("q" nil "quit"))
-(rangoli/set-leader-key "w z" 'rangoli/hydra-change-font-size/body "zoom")
+(rangoli/set-leader-key "t z" 'rangoli/hydra-change-font-size/body "zoom")
 
 (rangoli/set-font rangoli/current-font-name rangoli/current-font-size)
 
