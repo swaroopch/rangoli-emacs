@@ -90,7 +90,12 @@
 (dap-mode 1)
 (dap-ui-mode 1)
 
+;;; focus mode
+
+(straight-use-package 'focus)
+(straight-use-package '(lsp-focus :type git :host github :repo "emacs-lsp/lsp-focus"))
+(require 'lsp-focus)
+(add-hook 'focus-mode-hook #'lsp-focus-mode)
+
 (provide 'rangoli-lsp)
 ;; rangoli-lsp.el ends here
-
-

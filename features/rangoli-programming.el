@@ -104,5 +104,10 @@
   ("q" nil "quit"))
 (rangoli/set-leader-key "j t" 'rangoli/hl-todo-navigate/body "todo")
 
+;;; focus mode
+
+(straight-use-package 'focus)
+(rangoli/set-leader-key "T f" 'focus-mode "focus")
+
 (provide 'rangoli-programming)
 ;; rangoli-programming.el ends here
