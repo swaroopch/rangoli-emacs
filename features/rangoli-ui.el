@@ -71,8 +71,16 @@
 ;; https://oremacs.com/2019/04/07/swiper-isearch/
 (global-set-key (kbd "C-s") 'swiper-isearch)
 
-(rangoli/set-leader-key "j" 'avy-goto-line "jump to line")
-(rangoli/set-leader-key "s j" 'counsel-semantic-or-imenu)
+(rangoli/set-leader-key "j l" 'avy-goto-line "line")
+(rangoli/set-leader-key "j s" 'counsel-semantic-or-imenu "symbol")
+
+;; https://unix.stackexchange.com/a/29398
+(defun rangoli/jump-to-percentage (percent)
+  (interactive "nGoto percentage: ")
+  (push-mark)
+  (goto-char (/ (* percent (point-max)) 100)))
+
+(rangoli/set-leader-key "j p" 'rangoli/jump-to-percentage "percentage")
 
 ;;; Dired
 
@@ -225,9 +233,9 @@
 
 (rangoli/set-leader-key "i u" 'counsel-unicode-char "unicode")
 
-(rangoli/set-leader-key "l" 'browse-url-at-point)
+(rangoli/set-leader-key "j u" 'browse-url-at-point "url")
 (when (eq system-type 'gnu/linux)
-  (rangoli/set-leader-key "L" 'xwidget-webkit-browse-url))
+  (rangoli/set-leader-key "j U" 'xwidget-webkit-browse-url))
 
 (rangoli/set-leader-key "o a" 'org-agenda "agenda")
 (rangoli/set-leader-key "o c" 'org-capture "capture")

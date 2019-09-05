@@ -102,7 +102,7 @@
   ("p" hl-todo-previous "previous")
   ("o" hl-todo-occur "occur" :exit t)
   ("q" nil "quit"))
-(rangoli/set-leader-key "s t" 'rangoli/hl-todo-navigate/body "navigate todos")
+(rangoli/set-leader-key "j t" 'rangoli/hl-todo-navigate/body "todo")
 
 (provide 'rangoli-programming)
 ;; rangoli-programming.el ends here

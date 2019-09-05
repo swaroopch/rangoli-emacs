@@ -62,6 +62,7 @@
 (rangoli/declare-prefix "g" "git")
 (rangoli/declare-prefix "g e" "elisp")
 (rangoli/declare-prefix "i" "insert")
+(rangoli/declare-prefix "j" "jump")
 (rangoli/declare-prefix "k" "user-specific")  ;; reserved for /your/ use
 (rangoli/declare-prefix "o" "orgmode")
 (rangoli/declare-prefix "p" "project")
