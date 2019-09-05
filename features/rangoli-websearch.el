@@ -9,33 +9,33 @@
 (require 'engine-mode)
 (engine-mode t)
 
-(engine/set-keymap-prefix (kbd (s-concat rangoli/leader-key " j s")))
-(rangoli/declare-prefix "j s" "search")
+(engine/set-keymap-prefix (kbd (s-concat rangoli/leader-key " j w")))
+(rangoli/declare-prefix "j w" "web search")
 
 (defengine duckduckgo
   "https://duckduckgo.com/?q=%s"
   :keybinding "d")
-(rangoli/declare-prefix "j s d" "duckduckgo")
+(rangoli/declare-prefix "j w d" "duckduckgo")
 
 (defengine google-maps
   "https://www.google.com/maps?q=%s"
   :keybinding "m")
-(rangoli/declare-prefix "j s m" "maps (google)")
+(rangoli/declare-prefix "j w m" "maps (google)")
 
 (defengine twitter
   "https://twitter.com/search?q=%s"
   :keybinding "t")
-(rangoli/declare-prefix "j s t" "twitter")
+(rangoli/declare-prefix "j w t" "twitter")
 
 (defengine youtube
   "http://www.youtube.com/results?aq=f&oq=&search_query=%s"
   :keybinding "y")
-(rangoli/declare-prefix "j s y" "youtube")
+(rangoli/declare-prefix "j w y" "youtube")
 
 (defengine wordnik
   "https://www.wordnik.com/words/%s"
   :keybinding "w")
-(rangoli/declare-prefix "j s w" "wordnik")
+(rangoli/declare-prefix "j w w" "wordnik")
 
 (provide 'rangoli-websearch)
 ;; rangoli-websearch.el ends here
