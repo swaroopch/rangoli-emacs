@@ -38,5 +38,12 @@
 ;; https://www.reddit.com/r/emacs/comments/bxhod6/where_do_i_find_templates_for_dapmode/eq6rm65
 (require 'dap-python)
 
+;;; prettify-symbols-mode
+
+(add-hook 'python-mode-hook
+          (lambda ()
+            (push '("->" . ?⟶) prettify-symbols-alist)
+            (prettify-symbols-mode +1)))
+
 (provide 'rangoli-python)
 ;; rangoli-python.el ends here
