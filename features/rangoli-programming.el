@@ -73,6 +73,8 @@
   (setq-default flycheck-emacs-lisp-load-path 'inherit)
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
 
+(rangoli/set-leader-key "T e" 'flycheck-list-errors "flycheck errors")
+
 ;;; company
 
 (straight-use-package 'company)
