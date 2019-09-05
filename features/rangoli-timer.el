@@ -16,7 +16,7 @@
      #'rangoli/timer-alert
      timer-message)))
 
-(rangoli/set-leader-key "y" #'rangoli/set-timer "timer")
+(rangoli/set-leader-key "a y" #'rangoli/set-timer "timer")
 
 (provide 'rangoli-timer)
 ;; rangoli-timer.el ends here
