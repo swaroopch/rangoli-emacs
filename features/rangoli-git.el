@@ -31,11 +31,31 @@
 ;;; Git Link
 
 (require 'git-link)
+
 (setq git-link-use-commit t)
+
+(defun rangoli/jump-git-link-commit ()
+  (interactive)
+  (let ((git-link-open-in-browser t))
+    (call-interactively 'git-link-commit)))
+
+(defun rangoli/jump-git-link ()
+  (interactive)
+  (let ((git-link-open-in-browser t))
+    (call-interactively 'git-link)))
+
+(defun rangoli/jump-git-link-homepage ()
+  (interactive)
+  (let ((git-link-open-in-browser t))
+    (call-interactively 'git-link-homepage)))
+
 (rangoli/declare-prefix "g l" "link")
-(rangoli/set-leader-key "g l c" 'git-link-commit)
-(rangoli/set-leader-key "g l l" 'git-link)
-(rangoli/set-leader-key "g l h" 'git-link-homepage)
+(rangoli/set-leader-key "g l c" 'git-link-commit "copy link to commit")
+(rangoli/set-leader-key "g l C" 'rangoli/jump-git-link-commit "jump to commit")
+(rangoli/set-leader-key "g l l" 'git-link "copy link to line")
+(rangoli/set-leader-key "g l L" 'rangoli/jump-git-link "jump to line")
+(rangoli/set-leader-key "g l h" 'git-link-homepage "copy link to homepage")
+(rangoli/set-leader-key "g l H" 'rangoli/jump-git-link-homepage "jump to homepage")
 
 (provide 'rangoli-git)
 ;; rangoli-git.el ends here
