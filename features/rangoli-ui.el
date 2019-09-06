@@ -245,6 +245,8 @@
 (rangoli/set-leader-key "a t c" 'calendar "show calendar")
 (rangoli/set-leader-key "a t w" 'display-time-world "show world time")
 
+;;; Window management
+
 (rangoli/set-leader-key "w =" 'balance-windows-area)
 (rangoli/set-leader-key "w d" 'delete-window)
 (rangoli/set-leader-key "w f" 'toggle-frame-maximized)
@@ -253,7 +255,9 @@
 (rangoli/set-leader-key "w v" 'split-window-right)
 (rangoli/set-leader-key "w w" 'other-window)
 
-;;; Window management
+(rangoli/set-leader-key "w l s" 'ivy-push-view "save")
+(rangoli/set-leader-key "w l l" 'ivy-switch-view "load")
+
 (winum-mode)
 
 (rangoli/set-leader-key "1" 'winum-select-window-1)

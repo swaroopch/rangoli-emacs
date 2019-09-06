@@ -81,6 +81,7 @@
 (rangoli/declare-prefix "t" "text")
 
 (rangoli/declare-prefix "w" "window")
+(rangoli/declare-prefix "w l" "layout")
 
 (provide 'rangoli-keybindings)
 ;; rangoli-keybindings.el ends here
