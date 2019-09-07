@@ -60,5 +60,9 @@
 
 (straight-use-package 'diminish)
 
+;;; Where should customizations go?
+
+(setq custom-file (locate-user-emacs-file "custom.el"))
+
 (provide 'rangoli-core)
 ;; rangoli-core.el ends here
