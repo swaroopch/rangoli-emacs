@@ -320,6 +320,7 @@ body {
             (rangoli/set-local-leader-key "t" 'org-todo "todo state")
 
             (rangoli/declare-prefix-for-mode "T" "toggle")
+            (rangoli/set-local-leader-key "T c" 'org-toggle-checkbox "checkbox")
             (rangoli/set-local-leader-key "T i" 'org-toggle-inline-images "inline images")
             (rangoli/set-local-leader-key "T t" 'toc-org-mode "table of contents")
 
