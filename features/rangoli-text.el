@@ -1,5 +1,12 @@
 ;; rangoli-text.el --- text related functionality -*- lexical-binding: t; -*-
 
+;;; text manipulation
+
+(rangoli/set-leader-key "t s" 'query-replace)
+(rangoli/set-leader-key "t S" 'replace-string)
+(rangoli/set-leader-key "t r" 'query-replace-regexp)
+(rangoli/set-leader-key "t R" 'replace-regexp)
+
 ;;; copy-as-format
 
 (straight-use-package 'copy-as-format)
