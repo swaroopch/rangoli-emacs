@@ -213,6 +213,10 @@
 (rangoli/set-leader-key "'" 'rangoli/launch-terminal "terminal")
 (rangoli/set-leader-key "\"" 'ielm "elisp REPL")
 
+(rangoli/set-leader-key "a c" 'quick-calc "calculator")
+(rangoli/set-leader-key "a t c" 'calendar "show calendar")
+(rangoli/set-leader-key "a t w" 'display-time-world "show world time")
+
 (rangoli/set-leader-key "b b" 'ivy-switch-buffer "switch")
 (rangoli/set-leader-key "b c" 'rangoli/copy-whole-buffer-to-clipboard "copy buffer to clipboard")
 (rangoli/set-leader-key "b d" 'rangoli/kill-current-buffer "delete")
@@ -241,9 +245,6 @@
 
 (rangoli/set-leader-key "q q" 'save-buffers-kill-terminal)
 (rangoli/set-leader-key "q r" 'restart-emacs)
-
-(rangoli/set-leader-key "a t c" 'calendar "show calendar")
-(rangoli/set-leader-key "a t w" 'display-time-world "show world time")
 
 ;;; Window management
 
