@@ -290,10 +290,6 @@
 (require 'ivy-rich)
 (ivy-rich-mode 1)
 
-;;; Symbols
-
-(global-prettify-symbols-mode)
-
 ;;; very large files
 ;; https://writequit.org/articles/working-with-logs-in-emacs.html
 

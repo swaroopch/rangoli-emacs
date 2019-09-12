@@ -160,3 +160,5 @@ For example, assuming you have cloned /this/ repository to =~/rangoli-emacs=, he
 
   # Restart Emacs
 #+END_EXAMPLE
+*** =prettify-symbols-mode= causes flickering of Emacs UI
+Hence it was removed.
