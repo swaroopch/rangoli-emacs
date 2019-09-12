@@ -71,6 +71,7 @@
 (setq org-file-apps
       '((directory . emacs)
         (auto-mode . emacs)
+        ("csv" . emacs)
         ("html" . browse-url)))
 (when (eq system-type 'gnu/linux)
   ;; https://askubuntu.com/a/883905/43532
