@@ -303,7 +303,8 @@ body {
             (rangoli/set-local-leader-key "n n" 'org-forward-heading-same-level "next")
             (rangoli/set-local-leader-key "n p" 'org-backward-heading-same-level "previous")
 
-            (rangoli/set-local-leader-key "o" 'rangoli/open-file-external "open externally")
+            (rangoli/set-local-leader-key "o" 'org-open-at-point "open")
+            (rangoli/set-local-leader-key "O" 'rangoli/open-file-external "open externally")
 
             (rangoli/set-local-leader-key "r" 'org-redisplay-inline-images "redisplay images")
 
