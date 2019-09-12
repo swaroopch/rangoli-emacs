@@ -246,6 +246,8 @@
 (rangoli/set-leader-key "q q" 'save-buffers-kill-terminal)
 (rangoli/set-leader-key "q r" 'restart-emacs)
 
+(rangoli/set-leader-key "T r" 'read-only-mode)
+
 ;;; Window management
 
 (rangoli/set-leader-key "w =" 'balance-windows-area)
