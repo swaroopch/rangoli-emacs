@@ -61,7 +61,7 @@ Just kidding. I love what the evil-mode community has achieved and full respects
 2. Get this repository
 
    #+begin_src sh
-     git clone https://gitlab.com/swaroopch/rangoli-emacs ~/.emacs.d
+     git clone https://gitlab.com/swaroopch/rangoli-emacs ~/.config/emacs
    #+end_src
 
 3. Install font
@@ -99,7 +99,7 @@ Preferably, add your own personal modules, so that when you want to pull in rece
 *** Create your own emacs configuration
 You can create your own emacs configuration, and call whichever modules from this base repository that you wish.
 
-For example, assuming you have cloned /this/ repository to =~/rangoli-emacs=, here's a minimal =~/.emacs.d/init.el=:
+For example, assuming you have cloned /this/ repository to =~/rangoli-emacs=, here's a minimal =~/.config/emacs/init.el=:
 
 #+begin_src elisp
   ;;; Straight bootstrap
@@ -144,15 +144,15 @@ For example, assuming you have cloned /this/ repository to =~/rangoli-emacs=, he
 #+BEGIN_EXAMPLE
   # M-x eshell
 
-  cd ~/.emacs.d/straight/repos/org
+  cd ~/.config/emacs/straight/repos/org
   find-file local.mk
 
   # macOS
   EMACS = /Applications/Emacs.app/Contents/MacOS/Emacs
-  lispdir = /Users/swaroop/.emacs.d/straight/repos/org/lisp
+  lispdir = /Users/swaroop/.config/emacs/straight/repos/org/lisp
   # Linux
   EMACS = /usr/local/bin/emacs
-  lispdir = /home/swaroop/.emacs.d/straight/repos/org/lisp
+  lispdir = /home/swaroop/.config/emacs/straight/repos/org/lisp
 
   # save file (=M-m f s=) and close buffer (=M-m b d=)
 
