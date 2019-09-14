@@ -13,7 +13,7 @@
   ;; I want snippets stored only in my private emacs config repository, /not/ in the public rangoli-emacs repository.
   ;; http://joaotavora.github.io/yasnippet/snippet-organization.html#org10ee311
   (setq yas-snippet-dirs (-remove
-                        (lambda (item) (s-equals? (f-expand "~/.emacs.d/snippets") item))
+                        (lambda (item) (s-equals? (f-expand "~/.config/emacs/snippets") item))
                         yas-snippet-dirs))
   (add-to-list 'yas-snippet-dirs (f-join rangoli/private-emacs-config-dir "snippets")))
 (yas-global-mode 1)
