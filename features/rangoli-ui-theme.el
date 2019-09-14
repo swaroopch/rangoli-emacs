@@ -7,6 +7,12 @@
 (straight-use-package 'kaolin-themes)
 (straight-use-package 'nord-theme)
 
+;;; Terminal
+
+(when (not (display-graphic-p))
+  ;; https://stackoverflow.com/a/13812604/4869
+  (send-string-to-terminal "\033]12;green\007"))
+
 ;;; Theme-specific config
 
 (require 'apropospriate)
