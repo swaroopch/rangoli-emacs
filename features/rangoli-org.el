@@ -37,6 +37,9 @@
  ;; the directory where the attachments will be stored.
  org-id-uuid-program "uuidgen | tr '[:lower:]' '[:upper:]'"
 
+ ;; Agenda window
+ org-agenda-window-setup 'only-window
+
  org-agenda-show-future-repeats 'next
 
  ;; http://orgmode.org/worg/org-faq.html#agenda-wrong-time-of-day
