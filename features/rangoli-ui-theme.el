@@ -33,19 +33,14 @@
   (< 5 (ts-hour (ts-now)) 17))
 
 (defun rangoli/theme-light-or-dark? ()
-  (if (display-graphic-p)
-
-      (if-let ((mac-appearance (rangoli/mac-appearance)))
-          mac-appearance
-        
-        (if (rangoli/day-time?)
-            ;; GUI + day
-            "light"
-          ;; GUI + evening
-          "dark"))
+  (if-let ((mac-appearance (rangoli/mac-appearance)))
+      mac-appearance
     
-    ;; Terminal
-    "dark"))
+    (if (rangoli/day-time?)
+        ;; day
+        "light"
+      ;; evening
+      "dark")))
 
 (defvar rangoli/theme-type nil "light or dark.")
 
