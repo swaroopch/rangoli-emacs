@@ -16,10 +16,7 @@ places
 projectile-bookmarks.eld
 projectile.cache
 recentf
-straight/build
-straight/build-cache.el
-straight/modified
-straight/repos
+straight
 tramp
 transient
 var
