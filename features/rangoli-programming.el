@@ -69,7 +69,8 @@
 (add-hook 'prog-mode-hook #'flycheck-mode)
 
 (with-eval-after-load 'flycheck
-  (setq flycheck-emacs-args '("-Q" "--batch" "-l" "~/.emacs.d/init.el"))
+  (setq flycheck-emacs-args
+        (list "-Q" "--batch" "-l" (f-join user-emacs-directory "init.el")))
   (setq-default flycheck-emacs-lisp-load-path 'inherit)
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
 
