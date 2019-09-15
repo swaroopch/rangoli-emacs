@@ -17,7 +17,7 @@
 
 ;; I use a separate repository for highly-specific elisp code.
 (defvar rangoli/private-emacs-config-dir
-  (f-expand "~/.rangoli-emacs-private/")
+  (f-expand "~/.config/emacs-private/")
   "/Private/ emacs repository.")
 
 (provide 'rangoli-config)
