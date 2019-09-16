@@ -52,7 +52,7 @@
  org-agenda-log-mode-items '(closed clock state)
 
  ;; Agenda number of days
- org-agenda-span 2
+ org-agenda-span 1
 
  ;; Link to attachments
  org-link-abbrev-alist '(("att" . org-attach-expand-link))
