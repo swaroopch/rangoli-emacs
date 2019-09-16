@@ -136,6 +136,10 @@ For example, assuming you have cloned /this/ repository to =~/rangoli-emacs=, he
   ;; Add whatever functionality you wish!
 #+end_src
 ** Caveats
+*** Emacs
+- I use this config with the latest development version of Emacs (unreleased Emacs 27) because:
+  - [[https://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS][Emacs 27 comes with Jansson JSON C library built-in]], and LSP mode relies heavily on sending JSON messages to and fro the language servers, so LSP mode works way more faster /with/ Jansson library.
+  - Other benefits such as latest bug fixes, and minor improvements such as standardizing on =~/.config/emacs/= directory instead of =~/.emacs.d/= directory, etc.
 *** Operating System
 - Tested on Ubuntu Linux 19.04 ([[https://system76.com/pop][Pop! OS]]) and macOS 10.14.
 - Not tested on Windows. We welcome community contributions!
