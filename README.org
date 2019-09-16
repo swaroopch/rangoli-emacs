@@ -72,7 +72,7 @@ rm -rf emacs
 time git clone https://git.savannah.gnu.org/git/emacs.git
 cd emacs
 time ./autogen.sh
-time ./configure --with-xwidgets --with-imagemagick --with-mailutils
+time ./configure --with-modules --with-json --with-xwidgets --with-imagemagick --with-mailutils
 time make clean
 time make -j9
 time sudo make install
