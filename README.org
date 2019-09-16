@@ -45,36 +45,65 @@ In Maharashtra and Karnataka, rangolis are drawn on the doors of homes so that e
 [1] read "evil" as "evil-mode"!
 
 Just kidding. I love what the evil-mode community has achieved and full respects to them.
+** Caveats
+*** Emacs version
+- I use this config with the latest development version of Emacs (unreleased Emacs 27) because:
+  - [[https://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS][Emacs 27 comes with Jansson JSON C library built-in]], and LSP mode relies heavily on sending JSON messages to and fro the language servers, so LSP mode works way more faster /with/ Jansson library.
+  - Other benefits such as latest bug fixes, and minor improvements such as standardizing on =~/.config/emacs/= directory instead of =~/.emacs.d/= directory, etc.
+*** Operating System
+- Tested on Ubuntu Linux 19.04 ([[https://system76.com/pop][Pop! OS]]) and macOS Mojave (10.14).
+- Not tested on Windows. We welcome community contributions to get it working on Windows.
 ** Install
-1. Install Emacs
+*** Prerequisites
+**** macOS
+- [[https://brew.sh/][Install Homebrew (package manager)]]
+*** Install Emacs (latest unreleased version)
+**** Ubuntu
+#+begin_src sh
+sudo apt remove emacs-snapshot emacs-snapshot-common emacs-snapshot-el
 
-2. Get this repository
-
-   #+begin_src sh
-     git clone https://gitlab.com/swaroopch/rangoli-emacs ~/.config/emacs
-   #+end_src
-
-3. Install font
-
-   #+begin_src sh
-     # Ubuntu Linux
-     sudo apt install fonts-noto-mono
-
-     # macOS
-     brew cask install font-noto-mono
-   #+end_src
-
-4. macOS : Install command for notifications
-
-   #+begin_src sh
-   brew install terminal-notifier
-   #+end_src
-
-5. Start Emacs!
-
-6. Run some setup commands
-
-   - =M-x all-the-icons-install-fonts=
+sudo apt install build-essential libjansson-dev
+# https://git.launchpad.net/~ubuntu-elisp/emacs/tree/debian/control
+sudo apt install autoconf automake autotools-dev debhelper dpkg-dev imagemagick libacl1-dev libasound2-dev libdbus-1-dev libgconf2-dev libgif-dev libgnutls28-dev libgpm-dev libgtk-3-dev libjpeg-dev liblockfile-dev libm17n-dev libmagick++-dev libncurses5-dev libotf-dev libpng-dev librsvg2-dev libselinux1-dev libsystemd-dev libtiff5-dev libwebkit2gtk-4.0-dev libxaw7-dev libxml2-dev sharutils texinfo xaw3dg-dev
+sudo apt-get build-dep emacs
+mkdir -p ~/code
+cd ~/code
+rm -rf emacs
+time git clone https://git.savannah.gnu.org/git/emacs.git
+cd emacs
+time ./autogen.sh
+time ./configure --with-xwidgets --with-imagemagick --with-mailutils
+time make clean
+time make -j9
+time sudo make install
+#+end_src
+**** macOS
+#+begin_src sh
+  brew tap d12frosted/emacs-plus
+  brew install emacs-plus --HEAD --without-spacemacs-icon --with-jansson --with-mailutils
+  ln -sfv /usr/local/opt/emacs-plus/Emacs.app /Applications
+#+end_src
+*** Get this repository
+#+begin_src sh
+  mkdir -p ~/.config/
+  git clone https://gitlab.com/swaroopch/rangoli-emacs.git ~/.config/emacs
+#+end_src
+*** Install font
+**** Ubuntu
+#+begin_src sh
+  sudo apt install fonts-noto-mono
+#+end_src
+**** macOS
+#+begin_src sh
+  brew cask install font-noto-mono
+#+end_src
+*** macOS : Install command for notifications
+#+begin_src sh
+  brew install terminal-notifier
+#+end_src
+*** Start Emacs!
+*** Run some setup commands
+- =M-x all-the-icons-install-fonts=
 ** Key bindings
 NOTE: =M= stands for meta which is =alt= / =option= key on your keyboard.
 
@@ -125,14 +154,6 @@ For example, assuming you have cloned /this/ repository to =~/rangoli-emacs=, he
 
   ;; Add whatever functionality you wish!
 #+end_src
-** Caveats
-*** Emacs
-- I use this config with the latest development version of Emacs (unreleased Emacs 27) because:
-  - [[https://git.savannah.gnu.org/cgit/emacs.git/tree/etc/NEWS][Emacs 27 comes with Jansson JSON C library built-in]], and LSP mode relies heavily on sending JSON messages to and fro the language servers, so LSP mode works way more faster /with/ Jansson library.
-  - Other benefits such as latest bug fixes, and minor improvements such as standardizing on =~/.config/emacs/= directory instead of =~/.emacs.d/= directory, etc.
-*** Operating System
-- Tested on Ubuntu Linux 19.04 ([[https://system76.com/pop][Pop! OS]]) and macOS 10.14.
-- Not tested on Windows. We welcome community contributions!
 ** Known Issues
 *** OrgMode : =Invalid function: org-preserve-local-variables=
 #+BEGIN_EXAMPLE
