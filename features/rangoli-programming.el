@@ -93,7 +93,9 @@
 (require 'dumb-jump)
 (setq dumb-jump-selector 'ivy)
 (setq dumb-jump-prefer-searcher 'rg)
-(add-hook 'prog-mode-hook 'dumb-jump-mode)
+(add-hook 'prog-mode-hook (lambda ()
+                            (rangoli/set-local-leader-key "g g" 'dumb-jump-go)
+                            (rangoli/set-local-leader-key "g G" 'dumb-jump-back)))
 
 ;;; highlight todos
 
