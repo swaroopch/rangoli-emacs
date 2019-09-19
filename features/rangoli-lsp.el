@@ -80,6 +80,8 @@
 (straight-use-package 'company-lsp)
 (require 'company-lsp)
 (push 'company-lsp company-backends)
+;; via @yyoncho : https://gitter.im/emacs-lsp/lsp-mode?at=5d82677c901bb84d902e89b4
+(setq company-lsp-cache-candidates 'auto)
 
 (straight-use-package 'lsp-treemacs)
 (require 'lsp-treemacs)

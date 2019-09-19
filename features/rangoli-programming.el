@@ -83,6 +83,8 @@
 
 (require 'company)
 (diminish 'company-mode)
+;; via @yyoncho at https://gitter.im/emacs-lsp/lsp-mode?at=5d826b1d8521b34d914bb2b4
+(setq company-idle-delay 0.0)
 (add-hook 'prog-mode-hook #'company-mode)
 (company-prescient-mode)
 
