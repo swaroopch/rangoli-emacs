@@ -7,18 +7,8 @@
 
 ;;; Jump to website of a elisp package
 
-(defun rangoli/elisp-package-website ()
-  (interactive)
-  (let* ((melpa-recipe (straight-get-recipe))
-         (recipe (straight--convert-recipe melpa-recipe))
-         (host (plist-get recipe :host))
-         (repo (plist-get recipe :repo)))
-    (pcase host
-      ('github (browse-url (s-lex-format "https://github.com/${repo}")))
-      ('gitlab (browse-url (s-lex-format "https://gitlab.com/${repo}")))
-      (_ (error (s-lex-format "Not implemented yet : ${host}"))))))
-
-(rangoli/set-leader-key "j e" 'rangoli/elisp-package-website "open website of package")
+;; Merged upstream : https://github.com/raxod502/straight.el/pull/414
+(rangoli/set-leader-key "j e" 'straight-visit-package-website "open website of package")
 
 (provide 'rangoli-elisp)
 ;; rangoli-elisp.el ends here
