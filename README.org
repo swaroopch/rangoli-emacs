@@ -154,6 +154,24 @@ For example, assuming you have cloned /this/ repository to =~/rangoli-emacs=, he
 
   ;; Add whatever functionality you wish!
 #+end_src
+** Programming
+*** Python + pyenv
+1. Set =WORKON_HOME= environment variable:
+
+   #+begin_src shell
+     export WORKON_HOME="$HOME/.pyenv/versions"
+   #+end_src
+
+2. To set the correct virtualenv /interactively/ for a given project, use =M-n v p=.
+
+3. To set the correct virtualenv /automatically/ for a given project, use =.dir-locals.el=, such as:
+
+   #+begin_src emacs-lisp
+     ;;; Directory Local Variables
+     ;;; For more information see (info "(emacs) Directory Variables")
+
+     ((python-mode . ((pyvenv-workon . "secretproject"))))
+   #+end_src
 ** Known Issues
 *** OrgMode : =Invalid function: org-preserve-local-variables=
 #+BEGIN_EXAMPLE

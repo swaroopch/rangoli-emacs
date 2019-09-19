@@ -2,7 +2,7 @@
 
 ;;; Packages
 
-(straight-use-package 'pythonic)
+(straight-use-package 'pyvenv)
 
 ;;; pyenv
 (require 'python)
@@ -30,8 +30,10 @@
 (add-hook 'python-mode-hook
           (lambda ()
             (rangoli/declare-prefix-for-mode "v" "virtualenv")
-            (rangoli/set-local-leader-key "v a" 'pythonic-activate "activate")
-            (rangoli/set-local-leader-key "v d" 'pythonic-deactivate "deactivate")))
+            (rangoli/set-local-leader-key "v a" 'pyvenv-activate "activate")
+            (rangoli/set-local-leader-key "v d" 'pyvenv-deactivate "deactivate")
+            ;; `export WORKON_HOME="$HOME/.pyenv/versions"'
+            (rangoli/set-local-leader-key "v p" 'pyvenv-workon "pick pyenv")))
 
 ;;; DAP
 
