@@ -36,6 +36,7 @@
 (straight-use-package 'pyvenv)
 (add-hook 'python-mode-hook
           (lambda ()
+            (pyvenv-mode)  ;; Loads venv as per `pyvenv-workon' in directory local variables
             (rangoli/declare-prefix-for-mode "v" "virtualenv")
             (rangoli/set-local-leader-key "v a" 'pyvenv-activate "activate")
             (rangoli/set-local-leader-key "v d" 'pyvenv-deactivate "deactivate")
