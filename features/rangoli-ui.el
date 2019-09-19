@@ -234,6 +234,7 @@
 (rangoli/set-leader-key "f v" 'revert-buffer)
 (rangoli/set-leader-key "f y" 'rangoli/buffer-file-name "current file name")
 
+(rangoli/set-leader-key "i d" 'add-dir-local-variable)
 (rangoli/set-leader-key "i u" 'counsel-unicode-char "unicode")
 
 (rangoli/set-leader-key "j u" 'browse-url-at-point "url")
