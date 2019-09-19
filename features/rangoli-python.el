@@ -34,8 +34,10 @@
 
 ;;; virtualenv
 (straight-use-package 'pyvenv)
-;; Loads venv as per `pyvenv-workon' in directory local variables
-(pyvenv-mode)
+;; Loads venv as per `pyvenv-workon' in directory local variables.
+;; The hook should match the hook for `lsp' or `lsp-deferred' in `rangoli-lsp.el'.
+(add-hook 'prog-mode-hook #'pyvenv-mode)
+;; (pyvenv-mode)
 (add-hook 'python-mode-hook
           (lambda ()
             (rangoli/declare-prefix-for-mode "v" "virtualenv")
