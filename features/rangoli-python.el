@@ -2,21 +2,27 @@
 
 ;;; Packages
 
-(straight-use-package 'pyvenv)
-
-;;; pyenv
 (require 'python)
 (require 'lsp-pyls)
-(when (f-directory? (f-expand "~/.pyenv/shims/"))
-  (add-to-list 'python-shell-exec-path (f-expand "~/.pyenv/shims/"))
-  (setq flycheck-python-pycompile-executable  (f-expand "~/.pyenv/shims/python")
-        flycheck-python-flake8-executable (f-expand "~/.pyenv/shims/python")
-        flycheck-python-pylint-executable (f-expand "~/.pyenv/shims/python")
-        flycheck-python-mypy-executable (f-expand "~/.pyenv/shims/mypy")
-        lsp-pyls-server-command (f-expand "~/.pyenv/shims/pyls")))
+
+;;; pyenv
+(defvar rangoli/pyenv-root (f-expand "~/.pyenv/"))
+
+(defvar rangoli/has-pyenv
+  (f-directory? rangoli/pyenv-root)
+  "Is pyenv installed?")
+
+(when rangoli/has-pyenv
+  (setenv "WORKON_HOME" (f-join rangoli/pyenv-root "versions"))  ;; Used by `pyvenv-workon'
+  (add-to-list 'python-shell-exec-path (f-join rangoli/pyenv-root "shims"))
+  (setq flycheck-python-pycompile-executable  (f-join rangoli/pyenv-root "shims/python")
+        flycheck-python-flake8-executable (f-join rangoli/pyenv-root "shims/python")
+        flycheck-python-pylint-executable (f-join rangoli/pyenv-root "shims/python")
+        flycheck-python-mypy-executable (f-join rangoli/pyenv-root "shims/mypy")
+        lsp-pyls-server-command (f-join rangoli/pyenv-root "shims/pyls")))
 
 ;;; python3, when not using pyenv
-(when (not (f-directory? (f-expand "~/.pyenv/shims/")))
+(when (not rangoli/has-pyenv)
   (setq python-shell-interpreter "python3"
         flycheck-python-pycompile-executable "python3"
         flycheck-python-flake8-executable "python3"
@@ -27,13 +33,14 @@
       lsp-pyls-plugins-pycodestyle-max-line-length 120)
 
 ;;; virtualenv
+(straight-use-package 'pyvenv)
 (add-hook 'python-mode-hook
           (lambda ()
             (rangoli/declare-prefix-for-mode "v" "virtualenv")
             (rangoli/set-local-leader-key "v a" 'pyvenv-activate "activate")
             (rangoli/set-local-leader-key "v d" 'pyvenv-deactivate "deactivate")
-            ;; `export WORKON_HOME="$HOME/.pyenv/versions"'
-            (rangoli/set-local-leader-key "v p" 'pyvenv-workon "pick pyenv")))
+            (when rangoli/has-pyenv
+              (rangoli/set-local-leader-key "v p" 'pyvenv-workon "pick pyenv"))))
 
 ;;; DAP
 

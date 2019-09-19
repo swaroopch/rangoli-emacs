@@ -156,11 +156,7 @@ For example, assuming you have cloned /this/ repository to =~/rangoli-emacs=, he
 #+end_src
 ** Programming
 *** Python + pyenv
-1. Set =WORKON_HOME= environment variable:
-
-   #+begin_src shell
-     export WORKON_HOME="$HOME/.pyenv/versions"
-   #+end_src
+1. Install =pyenv= to =$HOME/.pyenv/versions=
 
 2. To set the correct virtualenv /interactively/ for a given project, use =M-n v p=.
 
