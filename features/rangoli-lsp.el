@@ -15,7 +15,7 @@
       ;; for debugging, see `*lsp-log*' buffer
       lsp-log-io t
       lsp-print-performance t)
-(add-hook 'prog-mode-hook #'lsp)
+(add-hook 'prog-mode-hook #'lsp-deferred)
 
 (straight-use-package 'lsp-ui)
 (require 'lsp-ui)
