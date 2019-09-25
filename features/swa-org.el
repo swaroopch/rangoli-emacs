@@ -36,7 +36,8 @@
 
 (defun rangoli/org-files ()
   (-concat
-   (list org-default-notes-file)
+   (when (f-exists? org-default-notes-file)
+     (list org-default-notes-file))
    (f-files org-directory (-partial 's-matches? "\\.org$"))))
 
 (defun rangoli/org-files-work ()
