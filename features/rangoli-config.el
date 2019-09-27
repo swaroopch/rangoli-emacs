@@ -1,19 +1,16 @@
 ;; rangoli-config.el --- core config -*- lexical-binding: t; -*-
 
-;; I use https://tresorit.com/ to sync this folder, end-to-end encrypted, to the cloud.
 (defvar rangoli/home-dir
-  (f-expand "~/Tresors/home/")
-  "/Private/ home directory where files are synced, with end-to-end encryption, to the cloud.")
+  (f-expand "~/docs/notes/")
+  "/Private/ home directory.")
 
-;; I use https://www.dropbox.com/ to sync this folder to the cloud.
 (defvar rangoli/shared-home-dir
-  (f-expand "~/Dropbox/org/")
-  "/Shared/ home directory where files are synced to the cloud. Usually used with other software like BeOrg iPhone app.")
+  (f-expand "~/docs/notes/")
+  "/Shared/ home directory. Usually used with other software like BeOrg iPhone app.")
 
-;; I use https://tresorit.com/ to sync this folder, end-to-end encrypted, to the cloud.
 (defvar rangoli/inbox-dir
-  (f-expand "~/Tresors/inbox/")
-  "/Private/ inbox directory where files are synced, with end-to-end encryption, to the cloud.")
+  (f-expand "~/Downloads/")
+  "/Private/ inbox directory.")
 
 ;; I use a separate repository for highly-specific elisp code.
 (defvar rangoli/private-emacs-config-dir
