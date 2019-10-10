@@ -93,10 +93,10 @@
                    "Inbox")
              "* %?\n%U\n%i\n")
 
-       (list "a"
-             "Achievement"
+       (list "m"
+             "Milestone"
              'entry
-             (list 'file+olp+datetree (concat org-directory "achievement.org"))
+             (list 'file+olp+datetree (concat org-directory "milestone.org"))
              "* %?\n%i\n")
 
        (list "d"
