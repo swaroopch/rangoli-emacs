@@ -33,13 +33,10 @@
 ;;; Agenda
 
 (defun rangoli/org-files ()
-  (-concat
-   (when (f-exists? org-default-notes-file)
-     (list org-default-notes-file))
-   (f-files org-directory (-partial 's-matches? "\\.org$"))))
+  (f-files org-directory (-partial 's-matches? "\\.org$")))
 
 (defun rangoli/org-files-work ()
-  (-filter (-partial 's-matches? "work.org") (rangoli/org-files)))
+  (list (f-join org-directory "work.org")))
 
 (defun rangoli/org-files-personal ()
   (-remove (-partial 's-matches? "work.org") (rangoli/org-files)))
