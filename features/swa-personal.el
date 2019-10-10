@@ -16,7 +16,7 @@
 
 ;;; Startup
 
-(setq initial-major-mode 'markdown-mode
+(setq initial-major-mode 'org-mode
       initial-scratch-message nil)
 
 ;;; Remove indentation on region
