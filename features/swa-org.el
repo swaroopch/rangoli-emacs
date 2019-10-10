@@ -39,10 +39,10 @@
    (f-files org-directory (-partial 's-matches? "\\.org$"))))
 
 (defun rangoli/org-files-work ()
-  (-filter (-partial 's-matches? "2_area_work.org") (rangoli/org-files)))
+  (-filter (-partial 's-matches? "work.org") (rangoli/org-files)))
 
 (defun rangoli/org-files-personal ()
-  (-remove (-partial 's-matches? "2_area_work.org") (rangoli/org-files)))
+  (-remove (-partial 's-matches? "work.org") (rangoli/org-files)))
 
 (setq org-agenda-files (rangoli/org-files))
 
@@ -89,26 +89,26 @@
        (list "w"
              "Work"
              'entry
-             (list 'file+headline (concat org-directory "2_area_work.org")
+             (list 'file+headline (concat org-directory "work.org")
                    "Inbox")
              "* %?\n%U\n%i\n")
 
        (list "a"
              "Achievement"
              'entry
-             (list 'file+olp+datetree (concat org-directory "4_archive_achievement.org"))
+             (list 'file+olp+datetree (concat org-directory "achievement.org"))
              "* %?\n%i\n")
 
        (list "d"
              "Diary"
              'entry
-             (list 'file+olp+datetree (concat org-directory "4_archive_diary.org"))
+             (list 'file+olp+datetree (concat org-directory "diary.org"))
              "* %?\n%i\n")))
 
 (defun rangoli/jump-work ()
   "Jump to work file."
   (interactive)
-  (find-file (f-join org-directory "2_area_work.org")))
+  (find-file (f-join org-directory "work.org")))
 
 (rangoli/set-leader-key "o w" 'rangoli/jump-work "work file")
 
