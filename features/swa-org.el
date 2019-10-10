@@ -2,8 +2,8 @@
 
 ;;; Locations of orgmode files
 
-(setq org-directory (f-join rangoli/home-dir "org/")
-      org-default-notes-file (f-join rangoli/shared-home-dir "inbox.org"))
+(setq org-directory rangoli/home-dir
+      org-default-notes-file (f-join org-directory "inbox.org"))
 
 ;;; Overall Behavior customization
 
