@@ -2,7 +2,7 @@
 
 ;; Inspired by https://github.com/emacs-helm/helm/blob/master/helm-org.el
 
-(defvar swa/bookmarks-file (f-join org-directory "3_resource_bookmarks.org"))
+(defvar swa/bookmarks-file (f-join org-directory "bookmarks.org"))
 
 (defun swa/counsel-org-get-heading (&optional no-tags no-todo no-priority no-comment)
   ;; Parse link, if any, and return description inside link
