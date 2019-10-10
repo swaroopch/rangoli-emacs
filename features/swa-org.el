@@ -26,9 +26,7 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "NEXT(n)" "REPEAT(r)" "DELEGATED(g!)" "WAITING(w!)" "SOMEDAY/MAYBE(s)"
 		  "|"
-		  "DONE(d)" "CANCELLED(c)"
-                  "|"
-                  "REMEMBER(m)"))
+		  "DONE(d)" "CANCELLED(c)"))
 
       org-todo-repeat-to-state "REPEAT")
 
@@ -57,8 +55,7 @@
 (setq org-agenda-custom-commands
       '(("e" "Everything"
 	 ((agenda "")
-          (todo "NEXT")
-          (todo "REMEMBER"))
+          (todo "NEXT"))
          ((org-agenda-files (rangoli/org-files))))
         ("w" "Work"
 	 ((agenda "")
@@ -66,8 +63,7 @@
          ((org-agenda-files (rangoli/org-files-work))))
         ("p" "Personal"
 	 ((agenda "")
-          (todo "NEXT")
-          (todo "REMEMBER"))
+          (todo "NEXT"))
          ((org-agenda-files (rangoli/org-files-personal))))))
 
 ;;; Capture templates
