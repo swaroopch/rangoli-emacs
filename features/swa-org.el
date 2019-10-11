@@ -38,15 +38,15 @@
 (defun swa/org-files-personal ()
   (f-files rangoli/home-dir (-partial 's-matches? "\\.org$")))
 
-(defun swa/org-files ()
+(defun rangoli/org-files ()
   (-concat (swa/org-files-work)
            (swa/org-files-personal)))
 
-(setq org-agenda-files (swa/org-files))
+(setq org-agenda-files (rangoli/org-files))
 
 (defun swa/reload-org-agenda-files ()
   (interactive)
-  (setq org-agenda-files (swa/org-files)))
+  (setq org-agenda-files (rangoli/org-files)))
 
 ;; https://orgmode.org/manual/Block-agenda.html
 ;; https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html
@@ -54,7 +54,7 @@
       '(("e" "Everything"
 	 ((agenda "")
           (todo "NEXT"))
-         ((org-agenda-files (swa/org-files))))
+         ((org-agenda-files (rangoli/org-files))))
         ("w" "Work"
 	 ((agenda "")
           (todo "NEXT"))

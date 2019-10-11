@@ -169,7 +169,7 @@ body {
   "Jump to one of my orgmode files."
   (interactive)
   (ivy-read "Jump to orgmode file: "
-            (rangoli/org-files)
+            (rangoli/org-files)  ;; This command is declared in `swa-org.el'
             :require-match t
             :action 'find-file))
 
