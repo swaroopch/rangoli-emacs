@@ -33,10 +33,12 @@
 ;;; Agenda
 
 (defun swa/org-files-work ()
-  (f-files rangoli/work-dir (-partial 's-matches? "\\.org$")))
+  (when (f-exists? rangoli/work-dir)
+    (f-files rangoli/work-dir (-partial 's-matches? "\\.org$"))))
 
 (defun swa/org-files-personal ()
-  (f-files rangoli/home-dir (-partial 's-matches? "\\.org$")))
+  (when (f-exists? rangoli/home-dir)
+    (f-files rangoli/home-dir (-partial 's-matches? "\\.org$"))))
 
 (defun rangoli/org-files ()
   (-concat (swa/org-files-work)
