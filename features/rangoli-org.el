@@ -176,7 +176,7 @@ body {
 (defun rangoli/insert-attachment-link (file-name)
   "Insert orgmode link to given file name."
   (interactive)
-  (insert (s-format "[[att:$0]]" 'elt (list file-name))))
+  (insert (s-lex-format "[[att:${file-name}]]")))
 
 (defun rangoli/choose-and-insert-attachment-link ()
   "Choose one of the already-attached files and insert orgmode link."
