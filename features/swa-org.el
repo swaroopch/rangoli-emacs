@@ -3,7 +3,7 @@
 ;;; Locations of orgmode files
 
 (setq org-directory rangoli/home-dir
-      org-default-notes-file (f-join org-directory "inbox.org"))
+      org-default-notes-file (f-join rangoli/home-dir "inbox.org"))
 
 ;;; Overall Behavior customization
 
@@ -32,14 +32,15 @@
 
 ;;; Agenda
 
-(defun swa/org-files ()
-  (f-files org-directory (-partial 's-matches? "\\.org$")))
-
 (defun swa/org-files-work ()
-  (list (f-join org-directory "work.org")))
+  (f-files rangoli/work-dir (-partial 's-matches? "\\.org$")))
 
 (defun swa/org-files-personal ()
-  (-remove (-partial 's-matches? "work.org") (swa/org-files)))
+  (f-files rangoli/home-dir (-partial 's-matches? "\\.org$")))
+
+(defun swa/org-files ()
+  (-concat (swa/org-files-work)
+           (swa/org-files-personal)))
 
 (setq org-agenda-files (swa/org-files))
 
@@ -86,33 +87,33 @@
        (list "w"
              "Work"
              'entry
-             (list 'file+headline (concat org-directory "work.org")
+             (list 'file+headline (concat rangoli/work-dir "work.org")
                    "Inbox")
              "* %?\n%U\n%i\n")
 
        (list "m"
              "Milestone"
              'entry
-             (list 'file+olp+datetree (concat org-directory "milestone.org"))
+             (list 'file+olp+datetree (concat rangoli/home-dir "milestone.org"))
              "* %?\n%i\n")
 
        (list "d"
              "Diary"
              'entry
-             (list 'file+olp+datetree (concat org-directory "diary.org"))
+             (list 'file+olp+datetree (concat rangoli/home-dir "diary.org"))
              "* %?\n%i\n")))
 
 (defun swa/jump-work ()
   "Jump to work file."
   (interactive)
-  (find-file (f-join org-directory "work.org")))
+  (find-file (f-join rangoli/work-dir "work.org")))
 
 (rangoli/set-leader-key "o w" 'swa/jump-work "work file")
 
 (defun swa/jump-tasks ()
   "Jump to tasks file."
   (interactive)
-  (find-file (f-join org-directory "tasks.org")))
+  (find-file (f-join rangoli/home-dir "tasks.org")))
 
 (rangoli/set-leader-key "o t" 'swa/jump-tasks "tasks file")
 

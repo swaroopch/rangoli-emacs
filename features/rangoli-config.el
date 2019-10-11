@@ -2,12 +2,16 @@
 
 (defvar rangoli/home-dir
   (f-expand "~/notes/")
-  "/Private/ home directory.")
+  "Home directory.")
 
-;; I use a separate repository for highly-specific elisp code.
+(defvar rangoli/work-dir
+  (f-expand "~/work/notes/")
+  "Work directory.")
+
+;; I use a separate repository for highly-specific elisp code that I do not want to publish online.
 (defvar rangoli/private-emacs-config-dir
   (f-expand "~/.config/emacs-private/")
-  "/Private/ emacs repository.")
+  "Private emacs repository.")
 
 (provide 'rangoli-config)
 ;; rangoli-config.el ends here
