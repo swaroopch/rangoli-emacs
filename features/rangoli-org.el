@@ -369,7 +369,7 @@ body {
                               "*Pandoc Error Buffer*"
                               t)
      (buffer-string))))
-(rangoli/set-leader-key "t o" 'rangoli/convert-markdown-to-orgmode "insert from clipboard markdown as org")
+(rangoli/set-leader-key "t o" 'rangoli/insert-from-clipboard-markdown-as-orgmode "insert from clipboard markdown as org")
 
 (provide 'rangoli-org)
 ;; rangoli-org.el ends here
