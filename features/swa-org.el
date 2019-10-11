@@ -26,7 +26,7 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "NEXT(n)" "REPEAT(r)" "DELEGATED(g!)" "WAITING(w!)" "SOMEDAY/MAYBE(s)"
 		  "|"
-		  "DONE(d)" "CANCELLED(c)"))
+		  "DONE(d!)" "CANCELLED(c!)"))
 
       org-todo-repeat-to-state "REPEAT")
 
