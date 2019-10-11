@@ -32,20 +32,20 @@
 
 ;;; Agenda
 
-(defun rangoli/org-files ()
+(defun swa/org-files ()
   (f-files org-directory (-partial 's-matches? "\\.org$")))
 
-(defun rangoli/org-files-work ()
+(defun swa/org-files-work ()
   (list (f-join org-directory "work.org")))
 
-(defun rangoli/org-files-personal ()
-  (-remove (-partial 's-matches? "work.org") (rangoli/org-files)))
+(defun swa/org-files-personal ()
+  (-remove (-partial 's-matches? "work.org") (swa/org-files)))
 
-(setq org-agenda-files (rangoli/org-files))
+(setq org-agenda-files (swa/org-files))
 
-(defun rangoli/reload-org-agenda-files ()
+(defun swa/reload-org-agenda-files ()
   (interactive)
-  (setq org-agenda-files (rangoli/org-files)))
+  (setq org-agenda-files (swa/org-files)))
 
 ;; https://orgmode.org/manual/Block-agenda.html
 ;; https://orgmode.org/worg/org-tutorials/org-custom-agenda-commands.html
@@ -53,15 +53,15 @@
       '(("e" "Everything"
 	 ((agenda "")
           (todo "NEXT"))
-         ((org-agenda-files (rangoli/org-files))))
+         ((org-agenda-files (swa/org-files))))
         ("w" "Work"
 	 ((agenda "")
           (todo "NEXT"))
-         ((org-agenda-files (rangoli/org-files-work))))
+         ((org-agenda-files (swa/org-files-work))))
         ("p" "Personal"
 	 ((agenda "")
           (todo "NEXT"))
-         ((org-agenda-files (rangoli/org-files-personal))))))
+         ((org-agenda-files (swa/org-files-personal))))))
 
 ;;; Capture templates
 
@@ -102,12 +102,19 @@
              (list 'file+olp+datetree (concat org-directory "diary.org"))
              "* %?\n%i\n")))
 
-(defun rangoli/jump-work ()
+(defun swa/jump-work ()
   "Jump to work file."
   (interactive)
   (find-file (f-join org-directory "work.org")))
 
-(rangoli/set-leader-key "o w" 'rangoli/jump-work "work file")
+(rangoli/set-leader-key "o w" 'swa/jump-work "work file")
+
+(defun swa/jump-tasks ()
+  "Jump to tasks file."
+  (interactive)
+  (find-file (f-join org-directory "tasks.org")))
+
+(rangoli/set-leader-key "o t" 'swa/jump-tasks "tasks file")
 
 (provide 'swa-org)
 ;; swa-org.el ends here
