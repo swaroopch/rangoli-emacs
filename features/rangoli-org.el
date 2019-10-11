@@ -355,5 +355,21 @@ body {
 (org-babel-do-load-languages
  'org-babel-load-languages '((python . t)))
 
+(defun rangoli/insert-from-clipboard-markdown-as-orgmode ()
+  (interactive)
+  ;; https://pandoc.org/MANUAL.html
+  (insert
+   (with-temp-buffer
+     (clipboard-yank)
+     (shell-command-on-region (point-min)
+                              (point-max)
+                              "pandoc -f commonmark -t org --wrap=preserve"
+                              (current-buffer)
+                              t
+                              "*Pandoc Error Buffer*"
+                              t)
+     (buffer-string))))
+(rangoli/set-leader-key "t o" 'rangoli/convert-markdown-to-orgmode "insert from clipboard markdown as org")
+
 (provide 'rangoli-org)
 ;; rangoli-org.el ends here
