@@ -15,7 +15,9 @@
                              (tags . " %i")
                              (search . " %i %-12:c"))
 
- org-agenda-use-time-grid nil 
+ org-agenda-use-time-grid nil
+
+ org-habit-graph-column 100
  )
 
 ;;; Todo states
