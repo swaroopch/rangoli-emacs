@@ -7,6 +7,7 @@
 (straight-use-package '(org :local-repo nil))
 (straight-use-package 'org-pomodoro)
 (straight-use-package 'toc-org)
+(straight-use-package 'org-drill)
 
 ;;; Require libraries
 
@@ -14,6 +15,8 @@
 (require 'org-attach)
 (require 'org-habit)
 (add-to-list 'org-modules 'org-habit)
+(require 'org-drill)
+(add-to-list 'org-modules 'org-drill)
 ;; Template extension mechanism, i.e. =<q=, =<s=, etc.
 ;; Alternatively, use =C-c C-,= key binding.
 (require 'org-tempo)
