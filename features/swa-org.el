@@ -46,7 +46,7 @@
 
 (setq org-agenda-files (rangoli/org-files))
 
-(defun swa/reload-org-agenda-files ()
+(defun rangoli/reload-org-agenda-files ()
   (interactive)
   (setq org-agenda-files (rangoli/org-files)))
 

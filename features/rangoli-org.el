@@ -258,6 +258,7 @@ body {
 (rangoli/set-leader-key "o j" 'rangoli/jump-to-org-file "jump to org file")
 (rangoli/set-leader-key "o x" 'rangoli/jump-inbox "inbox file")
 (rangoli/set-leader-key "o r" 'org-clock-goto "jump to running task")
+;; rangoli/reload-org-agenda-files declared in `swa-org.el'
 (rangoli/set-leader-key "o R" 'rangoli/reload-org-agenda-files "reload org-agenda-files")
 
 ;;; Theme
