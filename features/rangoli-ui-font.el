@@ -3,7 +3,10 @@
 ;; Need a font that supports emoji
 ;; https://www.google.com/get/noto/
 (defvar rangoli/default-font-name "Noto Mono")
-(defvar rangoli/default-font-size 16)
+(defvar rangoli/default-font-size (pcase system-type
+                                    ('darwin 16)
+                                    ('gnu/linux 18)
+                                    (t 16)))
 (defvar rangoli/default-font-weight "normal")
 
 (defvar rangoli/current-font-name rangoli/default-font-name)
