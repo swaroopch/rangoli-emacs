@@ -17,7 +17,7 @@
 
  org-agenda-use-time-grid nil
 
- org-habit-graph-column 100
+ org-habit-graph-column 70
  )
 
 ;;; Todo states
