@@ -23,8 +23,8 @@
 
 ;;; Default Theme
 
-(defvar rangoli/default-theme-light 'gruvbox-light-hard)
-(defvar rangoli/default-theme-dark 'gruvbox-dark-hard)
+(defvar rangoli/default-theme-light 'apropospriate-light)
+(defvar rangoli/default-theme-dark 'apropospriate-dark)
 
 (defun rangoli/mac-appearance ()
   "Is Mac currently using light or dark appearance?"
