@@ -35,8 +35,8 @@
       "light")))
 
 (defun rangoli/day-time? ()
-  "Is now between 6am and 5pm?"
-  (< 5 (ts-hour (ts-now)) 17))
+  "Is now between 8am and 5pm?"
+  (< 7 (ts-hour (ts-now)) 17))
 
 (defun rangoli/theme-light-or-dark? ()
   (if-let ((mac-appearance (rangoli/mac-appearance)))
