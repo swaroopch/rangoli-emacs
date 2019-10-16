@@ -5,6 +5,7 @@
 (straight-use-package 'gruvbox-theme)
 (straight-use-package 'kaolin-themes)
 (straight-use-package 'nord-theme)
+(straight-use-package 'zenburn-theme)
 
 ;;; Terminal
 
