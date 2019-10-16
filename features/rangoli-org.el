@@ -256,6 +256,10 @@ body {
   (let ((current-prefix-arg '(4)))
     (call-interactively 'org-deadline)))
 
+;;; Global key bindings
+
+(rangoli/set-leader-key "a l" 'org-drill "learn via spaced repetition")
+
 ;; Already used in core-ui.el : "o a", "o c"
 (rangoli/set-leader-key "o h" 'counsel-org-agenda-headlines "jump to headline")
 (rangoli/set-leader-key "o j" 'rangoli/jump-to-org-file "jump to org file")
