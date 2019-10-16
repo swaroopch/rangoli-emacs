@@ -21,6 +21,10 @@
 (require 'kaolin-themes)
 (setq kaolin-themes-org-scale-headings nil)
 
+;; https://www.nordtheme.com/docs/ports/emacs/configuration
+(require 'nord-theme)
+(setq nord-region-highlight "snowstorm")
+
 ;;; Default Theme
 
 (defvar rangoli/default-theme-light 'kaolin-valley-light)
