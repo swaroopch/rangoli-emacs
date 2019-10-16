@@ -3,7 +3,6 @@
 ;;; Packages
 
 (straight-use-package 'gruvbox-theme)
-(straight-use-package 'apropospriate-theme)
 (straight-use-package 'kaolin-themes)
 (straight-use-package 'nord-theme)
 
@@ -14,9 +13,6 @@
   (send-string-to-terminal "\033]12;green\007"))
 
 ;;; Theme-specific config
-
-(require 'apropospriate)
-(setq apropospriate-org-level-resizing nil)
 
 (require 'kaolin-themes)
 (setq kaolin-themes-org-scale-headings nil)
