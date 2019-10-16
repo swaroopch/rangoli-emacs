@@ -23,7 +23,7 @@
 
 ;;; Default Theme
 
-(defvar rangoli/default-theme-light 'kaolin-valley-light)
+(defvar rangoli/default-theme-light 'gruvbox-light-hard)
 (defvar rangoli/default-theme-dark 'nord)
 
 (defun rangoli/mac-appearance ()
