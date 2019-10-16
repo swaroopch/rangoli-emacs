@@ -5,6 +5,7 @@
 (straight-use-package 'ivy)
 (straight-use-package 'ivy-prescient)
 (straight-use-package 'ivy-rich)
+(straight-use-package 'ivy-posframe)
 (straight-use-package 'counsel)
 (straight-use-package 'swiper)
 (straight-use-package 'hydra)
@@ -64,6 +65,11 @@
 ;; Sorting by recency and usage
 (ivy-prescient-mode)
 (prescient-persist-mode)
+;; ivy display
+(require 'ivy-posframe)
+(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-center)))
+(ivy-posframe-mode 1)
+(diminish 'ivy-posframe-mode)
 
 (counsel-mode +1)
 (diminish 'counsel-mode)
