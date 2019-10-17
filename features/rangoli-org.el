@@ -14,9 +14,7 @@
 (require 'org)
 (require 'org-attach)
 (require 'org-habit)
-(add-to-list 'org-modules 'org-habit)
 (require 'org-drill)
-(add-to-list 'org-modules 'org-drill)
 ;; Template extension mechanism, i.e. =<q=, =<s=, etc.
 ;; Alternatively, use =C-c C-,= key binding.
 (require 'org-tempo)
