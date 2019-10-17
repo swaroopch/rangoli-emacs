@@ -5,7 +5,7 @@
   "Home directory.")
 
 (defvar rangoli/work-dir
-  (f-expand "~/work/notes/")
+  (f-expand "~/work-notes/")
   "Work directory.")
 
 ;; I use a separate repository for highly-specific elisp code that I do not want to publish online.
