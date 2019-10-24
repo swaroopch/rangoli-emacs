@@ -2,6 +2,7 @@
 .cache
 .dap-breakpoints
 .lsp-session-*
+/.org-id-locations
 /forge-database.sqlite
 /image-dired
 auto-save-list
