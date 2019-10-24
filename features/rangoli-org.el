@@ -76,6 +76,8 @@
       '((directory . emacs)
         (auto-mode . emacs)
         ("csv" . emacs)
+        ("json" . emacs)
+        ("jsonl" . emacs)
         ("html" . browse-url)))
 (when (eq system-type 'gnu/linux)
   ;; https://askubuntu.com/a/883905/43532
