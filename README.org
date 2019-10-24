@@ -86,7 +86,7 @@ time sudo make install
 *** Get this repository
 #+begin_src sh
   mkdir -p ~/.config/
-  git clone https://gitlab.com/swaroopch/rangoli-emacs.git ~/.config/emacs
+  git clone https://github.com/swaroopch/rangoli-emacs.git ~/.config/emacs
 #+end_src
 *** Install font
 **** Ubuntu
@@ -112,7 +112,7 @@ The magic is that most keys are under =M-m=, and major mode-specific keys are un
 There are two options:
 
 *** Fork the repo
-You can make a personal copy of this repository by [[https://docs.gitlab.com/ee/workflow/forking_workflow.html#creating-a-fork][forking the repository]], and then customize it however you wish!
+You can make a personal copy of this repository by [[https://help.github.com/en/github/getting-started-with-github/fork-a-repo][forking the repository]], and then customize it however you wish!
 
 Preferably, add your own personal modules, so that when you want to pull in recent changes from this base repository, you will not get conflicts.
 *** Create your own emacs configuration
