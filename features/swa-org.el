@@ -34,17 +34,17 @@
 
 ;;; Agenda
 
-(defun swa/org-files-work ()
-  (when (f-exists? rangoli/work-dir)
-    (f-files rangoli/work-dir (-partial 's-matches? "\\.org$"))))
-
-(defun swa/org-files-personal ()
-  (when (f-exists? rangoli/home-dir)
-    (f-files rangoli/home-dir (-partial 's-matches? "\\.org$"))))
+(defun swa/org-files-in-directory (dir)
+  (when (f-exists? dir)
+    (f-files dir (lambda (path)
+                   (and (s-matches? "\\.org$" path)
+                        ;; WebDAV folder contains files with pattern `._foo.org'
+                        (not (s-matches? "^\\." (f-base path))))))))
 
 (defun rangoli/org-files ()
-  (-concat (swa/org-files-work)
-           (swa/org-files-personal)))
+  (-concat (swa/org-files-in-directory rangoli/mobile-dir)
+           (swa/org-files-in-directory rangoli/work-dir)
+           (swa/org-files-in-directory rangoli/home-dir)))
 
 (setq org-agenda-files (rangoli/org-files))
 
