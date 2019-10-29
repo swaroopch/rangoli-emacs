@@ -10,12 +10,12 @@
 (setq
  ;; Agenda display
  ;; Don't display `%c', i.e. category, i.e. file name
- org-agenda-prefix-format  '((agenda . " %i %?-12t% s")
-                             (todo . " %i")
-                             (tags . " %i")
-                             (search . " %i %-12:c"))
+ ;; org-agenda-prefix-format  '((agenda . " %i %?-12t% s")
+ ;;                             (todo . " %i")
+ ;;                             (tags . " %i")
+ ;;                             (search . " %i %-12:c"))
 
- org-agenda-use-time-grid nil
+ ;; org-agenda-use-time-grid nil
 
  org-habit-graph-column 70
  )
