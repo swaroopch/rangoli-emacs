@@ -170,10 +170,13 @@ For example, assuming you have cloned /this/ repository to =~/rangoli-emacs=, he
    #+end_src
 ** Known Issues
 *** OrgMode : =Invalid function: org-preserve-local-variables=
+See https://github.com/syl20bnr/spacemacs/issues/11801
+
 #+BEGIN_EXAMPLE
   # M-x eshell
 
   cd ~/.config/emacs/straight/repos/org
+
   find-file local.mk
 
   # macOS
@@ -189,5 +192,15 @@ For example, assuming you have cloned /this/ repository to =~/rangoli-emacs=, he
 
   # Restart Emacs
 #+END_EXAMPLE
+
+If that doesn't work, try this:
+
+#+begin_src sh
+cd ~/.config/emacs && find . -name *.elc -print0 | xargs -0 rm
+#+end_src
+
+#+begin_example
+M-x straight-rebuild-all
+#+end_example
 *** =prettify-symbols-mode= causes flickering of Emacs UI
 Hence it was removed.
