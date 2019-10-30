@@ -2,8 +2,8 @@
 
 ;;; Locations of orgmode files
 
-(setq org-directory rangoli/home-dir
-      org-default-notes-file (f-join rangoli/home-dir "inbox.org"))
+(setq org-directory rangoli/notes-dir
+      org-default-notes-file (f-join rangoli/notes-dir "inbox.org"))
 
 ;;; Overall Behavior customization
 
@@ -37,16 +37,10 @@
                         (not (s-matches? "^\\." (f-base path))))))))
 
 (defun rangoli/org-files ()
-  (-concat (swa/org-files-in-directory rangoli/mobile-dir)
-           (swa/org-files-in-directory rangoli/work-dir)
-           (swa/org-files-in-directory rangoli/home-dir)))
-
-(defun swa/org-files-personal ()
-  (-concat (swa/org-files-in-directory rangoli/mobile-dir)
-           (swa/org-files-in-directory rangoli/home-dir)))
+  (swa/org-files-in-directory rangoli/notes-dir))
 
 (defun swa/org-files-work ()
-  (swa/org-files-in-directory rangoli/work-dir))
+  (list (concat rangoli/notes-dir "work.org")))
 
 (setq org-agenda-files (rangoli/org-files))
 
@@ -64,11 +58,7 @@
         ("w" "Work"
 	 ((agenda "")
           (todo "NEXT"))
-         ((org-agenda-files (swa/org-files-work))))
-        ("p" "Personal"
-	 ((agenda "")
-          (todo "NEXT"))
-         ((org-agenda-files (swa/org-files-personal))))))
+         ((org-agenda-files (swa/org-files-work))))))
 
 ;;; Capture templates
 
@@ -93,33 +83,33 @@
        (list "w"
              "Work"
              'entry
-             (list 'file+headline (concat rangoli/work-dir "work.org")
+             (list 'file+headline (concat rangoli/notes-dir "work.org")
                    "Inbox")
              "* %?\n%U\n%i\n")
 
        (list "m"
              "Milestone"
              'entry
-             (list 'file+olp+datetree (concat rangoli/home-dir "milestone.org"))
+             (list 'file+olp+datetree (concat rangoli/notes-dir "milestone.org"))
              "* %?\n%i\n")
 
        (list "d"
              "Diary"
              'entry
-             (list 'file+olp+datetree (concat rangoli/home-dir "diary.org"))
+             (list 'file+olp+datetree (concat rangoli/notes-dir "diary.org"))
              "* %?\n%i\n")))
 
 (defun swa/jump-work ()
   "Jump to work file."
   (interactive)
-  (find-file (f-join rangoli/work-dir "work.org")))
+  (find-file (f-join rangoli/notes-dir "work.org")))
 
 (rangoli/set-leader-key "o w" 'swa/jump-work "work file")
 
 (defun swa/jump-tasks ()
   "Jump to tasks file."
   (interactive)
-  (find-file (f-join rangoli/home-dir "tasks.org")))
+  (find-file (f-join rangoli/notes-dir "tasks.org")))
 
 (rangoli/set-leader-key "o t" 'swa/jump-tasks "tasks file")
 

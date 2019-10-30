@@ -4,7 +4,7 @@
 
 (straight-use-package 'annotate)
 (require 'annotate)
-(setq annotate-file (f-join rangoli/home-dir "annotations"))
+(setq annotate-file (f-join rangoli/notes-dir "annotations"))
 (rangoli/set-leader-key "a a" 'annotate-mode "annotate")
 
 (provide 'rangoli-annotate)
