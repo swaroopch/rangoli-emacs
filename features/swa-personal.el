@@ -16,12 +16,8 @@
 
 ;;; Startup
 
-;; Most of the times, I use scratch buffer to compose text that I'm pasting into groupchat or wiki software,
-;; and Markdown mode is more relevant for that.
-;; Alternative is to type in org-mode, export to markdown-mode and then copy-paste that.
-;; Decided on Markdown mode because that's easier for quick writing.
-(setq initial-major-mode 'markdown-mode
-      initial-scratch-message "Carpe diem!")
+(setq initial-major-mode 'org-mode
+      initial-scratch-message nil)
 
 ;;; Remove indentation on region
 
