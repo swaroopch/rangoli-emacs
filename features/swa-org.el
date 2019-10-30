@@ -10,10 +10,10 @@
 (setq
  ;; Agenda display
  ;; Align category `%c' with larger width
- org-agenda-prefix-format  '((agenda . " %i %-25:c%?-12t% s")
-                             (todo . " %i %-25:c")
-                             (tags . " %i %-25:c")
-                             (search . " %i %-25:c"))
+ org-agenda-prefix-format  '((agenda . " %i %-20:c%?-12t% s")
+                             (todo . " %i %-20:c")
+                             (tags . " %i %-20:c")
+                             (search . " %i %-20:c"))
 
  org-habit-graph-column 100)
 
