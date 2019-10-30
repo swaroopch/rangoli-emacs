@@ -53,7 +53,8 @@
 
 ;;; mode-line
 
-(setq display-time-load-average-threshold 5)
+(setq display-time-load-average-threshold 5
+      display-time-day-and-date t)
 (display-time)
 
 ;;; Narrowing framework - Ivy, Counsel, Swiper
