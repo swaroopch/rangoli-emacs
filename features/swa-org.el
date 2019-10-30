@@ -41,6 +41,13 @@
            (swa/org-files-in-directory rangoli/work-dir)
            (swa/org-files-in-directory rangoli/home-dir)))
 
+(defun swa/org-files-personal ()
+  (-concat (swa/org-files-in-directory rangoli/mobile-dir)
+           (swa/org-files-in-directory rangoli/home-dir)))
+
+(defun swa/org-files-work ()
+  (swa/org-files-in-directory rangoli/work-dir))
+
 (setq org-agenda-files (rangoli/org-files))
 
 (defun rangoli/reload-org-agenda-files ()
