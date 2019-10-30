@@ -9,16 +9,13 @@
 
 (setq
  ;; Agenda display
- ;; Don't display `%c', i.e. category, i.e. file name
- ;; org-agenda-prefix-format  '((agenda . " %i %?-12t% s")
- ;;                             (todo . " %i")
- ;;                             (tags . " %i")
- ;;                             (search . " %i %-12:c"))
+ ;; Align category `%c' with larger width
+ org-agenda-prefix-format  '((agenda . " %i %-25:c%?-12t% s")
+                             (todo . " %i %-25:c")
+                             (tags . " %i %-25:c")
+                             (search . " %i %-25:c"))
 
- ;; org-agenda-use-time-grid nil
-
- org-habit-graph-column 70
- )
+ org-habit-graph-column 100)
 
 ;;; Todo states
 
