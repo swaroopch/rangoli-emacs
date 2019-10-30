@@ -6,6 +6,7 @@
 (straight-use-package 'ivy-prescient)
 (straight-use-package 'ivy-rich)
 (straight-use-package 'ivy-posframe)
+(straight-use-package 'wgrep)  ;; useful for editing ivy-occur buffer (trigger ivy ⟶ `C-c C-o' ⟶ `C-x C-q' ⟶ `C-c C-c')
 (straight-use-package 'counsel)
 (straight-use-package 'swiper)
 (straight-use-package 'hydra)
