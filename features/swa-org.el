@@ -26,11 +26,9 @@
 ;; @ indicates insert note
 ;; / indicates entering/exiting the state
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "REPEAT(r)" "DELEGATED(g!)" "WAITING(w!)" "SOMEDAY/MAYBE(s)"
+      '((sequence "TODO(t)" "NEXT(n)" "DELEGATED(g!)" "WAITING(w!)" "SOMEDAY/MAYBE(s)"
 		  "|"
-		  "DONE(d!)" "CANCELLED(c!)"))
-
-      org-todo-repeat-to-state "REPEAT")
+		  "DONE(d!)" "CANCELLED(c!)")))
 
 ;;; Agenda
 
