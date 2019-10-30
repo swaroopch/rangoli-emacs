@@ -3,12 +3,13 @@
 ;;; Packages
 
 (straight-use-package 'gruvbox-theme)
-(straight-use-package 'kaolin-themes)
 (straight-use-package 'nord-theme)
 (straight-use-package 'zenburn-theme)
+(straight-use-package 'kaolin-themes)
 
 ;;; Terminal
 
+;; Set cursor color
 (when (not (display-graphic-p))
   ;; https://stackoverflow.com/a/13812604/4869
   (send-string-to-terminal "\033]12;green\007"))
@@ -26,54 +27,64 @@
 
 (defvar rangoli/default-theme-light 'gruvbox-light-hard)
 (defvar rangoli/default-theme-dark 'nord)
+(defvar rangoli/default-theme-console 'zenburn)
 
 (defun rangoli/mac-appearance ()
   "Is Mac currently using light or dark appearance?"
   (when (eq system-type 'darwin)
     (if (s-contains? "Dark"
                      (shell-command-to-string "defaults read -g AppleInterfaceStyle"))
-        "dark"
-      "light")))
+        'dark
+      'light)))
 
 (defun rangoli/day-time? ()
   "Is now between 8am and 5pm?"
   (< 7 (ts-hour (ts-now)) 17))
 
-(defun rangoli/theme-light-or-dark? ()
-  (if-let ((mac-appearance (rangoli/mac-appearance)))
-      mac-appearance
-    
-    (if (rangoli/day-time?)
-        ;; day
-        "light"
-      ;; evening
-      "dark")))
+(defun rangoli/theme-type? ()
+  (if window-system
+      (if-let ((mac-appearance (rangoli/mac-appearance)))
+          mac-appearance
+        
+        (if (rangoli/day-time?)
+            ;; day
+            'light
+          ;; evening
+          'dark))
+    'console))
 
-(defvar rangoli/theme-type nil "light or dark.")
+(defvar rangoli/theme-type nil "light or dark or console.")
 
 (defun rangoli/load-theme-light ()
   (interactive)
-  (setq rangoli/theme-type "light")
+  (setq rangoli/theme-type 'light)
   (counsel-load-theme-action (symbol-name rangoli/default-theme-light))
   (when (eq system-type 'darwin)
     (modify-all-frames-parameters '((ns-transparent-titlebar . t) (ns-appearance . light)))))
 
 (defun rangoli/load-theme-dark ()
   (interactive)
-  (setq rangoli/theme-type "dark")
+  (setq rangoli/theme-type 'dark)
   (counsel-load-theme-action (symbol-name rangoli/default-theme-dark))
   (when (eq system-type 'darwin)
     (modify-all-frames-parameters '((ns-transparent-titlebar . t) (ns-appearance . dark)))))
 
-(if (s-equals? "light" (rangoli/theme-light-or-dark?))
-    (rangoli/load-theme-light)
-  (rangoli/load-theme-dark))
+(defun rangoli/load-theme-console ()
+  (interactive)
+  (setq rangoli/theme-type 'console)
+  (counsel-load-theme-action (symbol-name rangoli/default-theme-console)))
+
+(if-let (theme-type (rangoli/theme-type?))
+    (cond
+     ((eq 'light theme-type) (rangoli/load-theme-light))
+     ((eq 'dark theme-type) (rangoli/load-theme-dark))
+     ((eq 'console theme-type) (rangoli/load-theme-console))))
 
 ;;; Theme switcher
 
 (defun rangoli/theme-cycle ()
   (interactive)
-  (if (s-equals? "light" rangoli/theme-type)
+  (if (eq 'light rangoli/theme-type)
       (rangoli/load-theme-dark)
     (rangoli/load-theme-light)))
 
