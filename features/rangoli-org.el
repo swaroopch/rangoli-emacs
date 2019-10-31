@@ -112,6 +112,12 @@
 (defun rangoli/org-underline () (interactive) (org-emphasize ?_))
 (defun rangoli/org-verbatim () (interactive) (org-emphasize ?=))
 
+;;; Log into a drawer
+;; http://stackoverflow.com/a/8198018/4869
+(setq org-log-into-drawer t
+      org-clock-into-drawer "CLOCK"
+      org-clock-idle-time 10)
+
 ;;; Effort estimation
 ;; http://orgmode.org/worg/doc.html#org-effort-durations
 (setq org-duration-units
