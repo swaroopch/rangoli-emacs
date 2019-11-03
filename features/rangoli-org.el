@@ -8,6 +8,7 @@
 (straight-use-package 'org-pomodoro)
 (straight-use-package 'toc-org)
 (straight-use-package 'org-drill)
+(straight-use-package 'org-tree-slide)
 
 ;;; Require libraries
 
@@ -256,6 +257,17 @@ body {
   (let ((current-prefix-arg '(4)))
     (call-interactively 'org-deadline)))
 
+;;; Presentation
+
+(require 'org-tree-slide)
+
+(defhydra rangoli/present ()
+  "presentation"
+  ("t" org-tree-slide-mode "toggle slide mode")
+  ("n" org-tree-slide-move-next-tree "next")
+  ("p" org-tree-slide-move-previous-tree "previous")
+  ("q" nil "quit"))
+
 ;;; Global key bindings
 
 (rangoli/set-leader-key "a l" 'org-drill "learn via spaced repetition")
@@ -318,6 +330,8 @@ body {
 
             (rangoli/set-local-leader-key "o" 'org-open-at-point "open")
             (rangoli/set-local-leader-key "O" 'rangoli/open-file-external "open externally")
+
+            (rangoli/set-local-leader-key "p" 'rangoli/present/body "present")
 
             (rangoli/set-local-leader-key "r" 'org-redisplay-inline-images "redisplay images")
 
