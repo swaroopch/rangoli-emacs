@@ -54,6 +54,7 @@
 (rangoli/declare-prefix "T" "toggle/theme")
 
 (rangoli/declare-prefix "a" "application")
+(rangoli/declare-prefix "a e" "erc (irc)")
 (rangoli/declare-prefix "a t" "date/time")
 
 (rangoli/declare-prefix "b" "buffer")
