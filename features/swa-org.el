@@ -83,8 +83,8 @@
        (list "w"
              "Work"
              'entry
-             (list 'file+headline (concat rangoli/notes-dir "work.org")
-                   "Inbox")
+             (list 'file+headline (concat rangoli/notes-dir "work-inbox.org")
+                   "Work Inbox")
              "* %?\n%U\n%i\n")
 
        (list "m"
