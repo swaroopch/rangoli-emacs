@@ -6,7 +6,7 @@
 ;; Also see `early-init.el'
 
 (run-with-idle-timer
- 3 nil (lambda () (setq gc-cons-threshold (* 20 1024 1024))))
+ 3 nil (lambda () (setq gc-cons-threshold (car (get 'gc-cons-threshold 'standard-value)))))
 
 (defvar rangoli/file-name-handler-alist file-name-handler-alist)
 (setq file-name-handler-alist nil)
