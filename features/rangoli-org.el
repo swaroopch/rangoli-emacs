@@ -204,7 +204,8 @@ body {
   "List files in commonly used folders."
   (-concat
    (f-files "~/Desktop/" 'rangoli/not-dot-file?)
-   (f-files "~/Downloads/" 'rangoli/not-dot-file?)))
+   (f-files "~/Downloads/" 'rangoli/not-dot-file?)
+   (f-files "~/Dropbox/inbox/" 'rangoli/not-dot-file?)))
 
 (defun rangoli/move-file-and-insert-attachment-link (file-name)
   "Move file and insert attachment link."
