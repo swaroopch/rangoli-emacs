@@ -57,6 +57,7 @@
  org-agenda-span 1
 
  ;; Link to attachments
+ ;; TODO Deprecated: "att" links
  org-link-abbrev-alist '(("att" . org-attach-expand-link))
 
  ;; Respect `ATTACH_DIR_INHERIT' property always
@@ -181,7 +182,10 @@ body {
 (defun rangoli/insert-attachment-link (file-name)
   "Insert orgmode link to given file name."
   (interactive)
-  (insert (s-lex-format "[[att:${file-name}]]")))
+  ;; Use absolute paths, but with home tilde prefix.
+  ;; So that when I move notes, the attachment links are still valid!
+  (let ((file-path (f-relative (f-join (org-attach-dir) file-name) (getenv "HOME"))))
+    (insert (s-lex-format "[[file:~/${file-path}]]"))))
 
 (defun rangoli/choose-and-insert-attachment-link ()
   "Choose one of the already-attached files and insert orgmode link."
