@@ -156,6 +156,7 @@
       org-export-with-todo-keywords nil
       org-export-with-author nil
       org-export-with-creator nil
+      org-export-with-special-strings nil
       ;; https://developer.mozilla.org/en-US/docs/Web/CSS/font-family
       ;; https://developer.mozilla.org/en-US/docs/Web/CSS/font-size
       org-html-head-extra "
