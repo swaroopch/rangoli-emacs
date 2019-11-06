@@ -184,8 +184,8 @@ body {
   (interactive)
   ;; Use absolute paths, but with home tilde prefix.
   ;; So that when I move notes, the attachment links are still valid!
-  (let ((file-path (f-relative (f-join (org-attach-dir) file-name) (getenv "HOME"))))
-    (insert (s-lex-format "[[file:~/${file-path}]]"))))
+  (let ((file-path (f-short (f-join (org-attach-dir) file-name))))
+    (insert (s-lex-format "[[file:${file-path}]]"))))
 
 (defun rangoli/choose-and-insert-attachment-link ()
   "Choose one of the already-attached files and insert orgmode link."
