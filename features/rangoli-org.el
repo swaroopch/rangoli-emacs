@@ -205,6 +205,7 @@ body {
   (-concat
    (f-files "~/Desktop/" 'rangoli/not-dot-file?)
    (f-files "~/Downloads/" 'rangoli/not-dot-file?)
+   (f-files "~/Pictures/" 'rangoli/not-dot-file?)
    (f-files "~/Dropbox/inbox/" 'rangoli/not-dot-file?)))
 
 (defun rangoli/move-file-and-insert-attachment-link (file-name)
