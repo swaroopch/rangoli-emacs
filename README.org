@@ -156,11 +156,13 @@ For example, assuming you have cloned /this/ repository to =~/rangoli-emacs=, he
 #+end_src
 ** Programming
 *** Python + pyenv
-1. Install =pyenv= to =$HOME/.pyenv/versions=
+1. Install =pyenv= to =$HOME/.pyenv=
+
+   - https://github.com/pyenv/pyenv-installer
 
 2. To set the correct virtualenv /interactively/ for a given project, use =M-n v p=.
 
-3. To set the correct virtualenv /automatically/ for a given project, use =.dir-locals.el=, such as:
+3. To set the correct virtualenv /automatically/ for a given project, add a directory local variable (use =M-m i d=), such as:
 
    #+begin_src emacs-lisp
      ;;; Directory Local Variables
@@ -193,7 +195,7 @@ See https://github.com/syl20bnr/spacemacs/issues/11801
   # Restart Emacs
 #+END_EXAMPLE
 
-If that doesn't work, try this:
+If that doesn't work, try:
 
 #+begin_src sh
 cd ~/.config/emacs && find . -name *.elc -print0 | xargs -0 rm
