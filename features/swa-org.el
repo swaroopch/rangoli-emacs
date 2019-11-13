@@ -106,6 +106,13 @@
 
 (rangoli/set-leader-key "o w" 'swa/jump-work "work file")
 
+(defun swa/jump-work-inbox ()
+  "Jump to work-inbox file."
+  (interactive)
+  (find-file (f-join rangoli/notes-dir "work-inbox.org")))
+
+(rangoli/set-leader-key "o W" 'swa/jump-work-inbox "work inbox file")
+
 (defun swa/jump-tasks ()
   "Jump to tasks file."
   (interactive)
