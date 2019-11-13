@@ -1,8 +1,18 @@
 ;; rangoli-ui-font.el --- font configuration -*- lexical-binding: t; -*-
 
 ;; Need a font that supports emoji
+;; Choices are:
+;;
+;; "Noto Mono"
 ;; https://www.google.com/get/noto/
-(defvar rangoli/default-font-name "Noto Mono")
+;; Linux : `sudo apt install fonts-noto'
+;; macOS : `brew tap homebrew/cask-fonts; brew cask install font-noto-mono'
+;;
+;; "IBM Plex Mono"
+;; https://www.ibm.com/plex/
+;; Linux : `sudo apt install fonts-ibm-plex'
+;; macOS : `brew tap homebrew/cask-fonts; brew cask install font-ibm-plex'
+(defvar rangoli/default-font-name "IBM Plex Mono")
 (defvar rangoli/default-font-size (pcase system-type
                                     ('darwin 16)
                                     ('gnu/linux 18)
