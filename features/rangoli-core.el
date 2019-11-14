@@ -56,6 +56,14 @@
 (straight-use-package 'exec-path-from-shell)
 (exec-path-from-shell-initialize)
 
+;;; Common functionality
+
+(defun rangoli/random-choice (items)
+  "Pick random item from list."
+  (let* ((size (length items))
+         (index (random size)))
+    (nth index items)))
+
 ;;; Common Packages
 
 (straight-use-package 'diminish)
