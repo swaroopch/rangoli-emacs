@@ -39,7 +39,16 @@
 
 (defun rangoli/day-time? ()
   "Is now between 8am and 5pm?"
-  (< 7 (ts-hour (ts-now)) 17))
+  (let* ((now (ts-now))
+         (hour (ts-hour now))
+         (month (ts-month now)))
+    ;; roughly, summer months
+    ;; https://www.timeanddate.com/time/change/usa
+    (if (< 3 month 11)
+        (< 7 hour 17)
+      ;; roughly, winter months
+      ;; https://www.timeanddate.com/time/change/usa
+      (< 6 hour 15))))
 
 (defun rangoli/theme-type? ()
   (if window-system
