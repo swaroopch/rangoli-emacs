@@ -31,7 +31,7 @@
 
  org-image-actual-width 500
 
- org-tags-column 100
+ org-tags-column -100
 
  ;; If I attach a file on Linux, sync my org directory to macOS, and then I attach a file on macOS,
  ;; it can result in a conflict because Linux generates UUIDs in both lowercase and uppercase,
