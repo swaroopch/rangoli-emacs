@@ -15,7 +15,7 @@
                              (tags . " %i %-20:c")
                              (search . " %i %-20:c"))
 
- org-habit-graph-column 100)
+ org-habit-graph-column 60)
 
 ;;; Todo states
 
