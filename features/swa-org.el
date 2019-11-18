@@ -23,7 +23,7 @@
 ;; @ indicates insert note
 ;; / indicates entering/exiting the state
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "DELEGATED(g!)" "WAITING(w!)" "SOMEDAY/MAYBE(s)"
+      '((sequence "TODO(t)" "NEXT(n)" "DELEGATED(g!)" "WAITING(w!)" "SOMEDAY/MAYBE(s)" "GOAL(l)"
 		  "|"
 		  "DONE(d!)" "CANCELLED(c!)")))
 
@@ -53,11 +53,13 @@
 (setq org-agenda-custom-commands
       '(("e" "Everything"
 	 ((agenda "")
-          (todo "NEXT"))
+          (todo "NEXT")
+          (todo "GOAL"))
          ((org-agenda-files (rangoli/org-files))))
         ("w" "Work"
 	 ((agenda "")
-          (todo "NEXT"))
+          (todo "NEXT")
+          (todo "GOAL"))
          ((org-agenda-files (swa/org-files-work))))))
 
 ;;; Capture templates
