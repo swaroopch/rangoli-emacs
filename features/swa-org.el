@@ -87,12 +87,6 @@
                    "Work Inbox")
              "* %?\n%U\n%i\n")
 
-       (list "m"
-             "Milestone"
-             'entry
-             (list 'file+olp+datetree (concat rangoli/notes-dir "milestone.org"))
-             "* %?\n%i\n")
-
        (list "d"
              "Diary"
              'entry
