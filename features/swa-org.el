@@ -23,7 +23,7 @@
 ;; @ indicates insert note
 ;; / indicates entering/exiting the state
 (setq org-todo-keywords
-      '((sequence "TODO(t)" "NEXT(n)" "DELEGATED(g!)" "WAITING(w!)" "SOMEDAY/MAYBE(s)" "GOAL(l)"
+      '((sequence "TODO(t)" "NEXT(n)" "GOAL(l)" "REPEAT(r)" "DELEGATED(g!)" "WAITING(w!)" "SOMEDAY/MAYBE(s)"
 		  "|"
 		  "DONE(d!)" "CANCELLED(c!)")))
 
