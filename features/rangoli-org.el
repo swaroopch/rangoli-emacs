@@ -286,6 +286,7 @@ body {
 (rangoli/set-leader-key "o r" 'org-clock-goto "jump to running task")
 ;; rangoli/reload-org-agenda-files declared in `swa-org.el'
 (rangoli/set-leader-key "o R" 'rangoli/reload-org-agenda-files "reload org-agenda-files")
+(rangoli/set-leader-key "o y" 'org-cycle-agenda-files "cycle agenda files")
 
 ;;; Theme
 
