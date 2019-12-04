@@ -53,6 +53,7 @@
 (require 'rangoli-docker)
 (require 'rangoli-tramp)
 (require 'rangoli-elisp)
+(require 'rangoli-cpp)
 (require 'rangoli-python)
 (require 'rangoli-swift)
 (require 'rangoli-java)
