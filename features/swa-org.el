@@ -116,5 +116,19 @@
 
 (rangoli/set-leader-key "o t" 'swa/jump-tasks "tasks file")
 
+(defun swa/jump-people ()
+  "Jump to people file."
+  (interactive)
+  (find-file (f-join rangoli/notes-dir "people.org")))
+
+(rangoli/set-leader-key "o p" 'swa/jump-people "people file")
+
+(defun swa/jump-tickler ()
+  "Jump to tickler file."
+  (interactive)
+  (find-file (f-join rangoli/notes-dir "tickler.org")))
+
+(rangoli/set-leader-key "o l" 'swa/jump-tickler "tickler file")
+
 (provide 'swa-org)
 ;; swa-org.el ends here
