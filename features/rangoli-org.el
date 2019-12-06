@@ -275,19 +275,6 @@ body {
   ("p" org-tree-slide-move-previous-tree "previous")
   ("q" nil "quit"))
 
-;;; Global key bindings
-
-(rangoli/set-leader-key "a l" 'org-drill "learn via spaced repetition")
-
-;; Already used in core-ui.el : "o a", "o c"
-(rangoli/set-leader-key "o h" 'counsel-org-agenda-headlines "jump to headline")
-(rangoli/set-leader-key "o j" 'rangoli/jump-to-org-file "jump to org file")
-(rangoli/set-leader-key "o x" 'rangoli/jump-inbox "inbox file")
-(rangoli/set-leader-key "o r" 'org-clock-goto "jump to running task")
-;; rangoli/reload-org-agenda-files declared in `swa-org.el'
-(rangoli/set-leader-key "o R" 'rangoli/reload-org-agenda-files "reload org-agenda-files")
-(rangoli/set-leader-key "o y" 'org-cycle-agenda-files "cycle agenda files")
-
 ;;; Theme
 
 ;; https://github.com/hlissner/emacs-doom-themes/blob/e771d566b138918c7c553a9a9e96ce1bd38bc903/doom-themes-org.el#L71-L81
@@ -400,6 +387,20 @@ body {
                               "*Pandoc Error Buffer*"
                               t)
      (buffer-string))))
+
+;; Key bindings
+
+(rangoli/set-leader-key "a l" 'org-drill "learn via spaced repetition")
+
+;; Already used in core-ui.el : "o a", "o c"
+(rangoli/set-leader-key "o h" 'counsel-org-agenda-headlines "jump to headline")
+(rangoli/set-leader-key "o j" 'rangoli/jump-to-org-file "jump to org file")
+(rangoli/set-leader-key "o x" 'rangoli/jump-inbox "inbox file")
+(rangoli/set-leader-key "o r" 'org-clock-goto "jump to running task")
+;; rangoli/reload-org-agenda-files declared in `swa-org.el'
+(rangoli/set-leader-key "o R" 'rangoli/reload-org-agenda-files "reload org-agenda-files")
+(rangoli/set-leader-key "o y" 'org-cycle-agenda-files "cycle agenda files")
+
 (rangoli/set-leader-key "t o" 'rangoli/insert-from-clipboard-markdown-as-orgmode "insert from clipboard markdown as org")
 
 (provide 'rangoli-org)

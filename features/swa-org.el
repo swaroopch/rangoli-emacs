@@ -100,35 +100,33 @@
   (interactive)
   (find-file (f-join rangoli/notes-dir "work.org")))
 
-(rangoli/set-leader-key "o w" 'swa/jump-work "work file")
-
 (defun swa/jump-work-inbox ()
   "Jump to work-inbox file."
   (interactive)
   (find-file (f-join rangoli/notes-dir "work-inbox.org")))
-
-(rangoli/set-leader-key "o W" 'swa/jump-work-inbox "work inbox file")
 
 (defun swa/jump-tasks ()
   "Jump to tasks file."
   (interactive)
   (find-file (f-join rangoli/notes-dir "tasks.org")))
 
-(rangoli/set-leader-key "o t" 'swa/jump-tasks "tasks file")
-
 (defun swa/jump-people ()
   "Jump to people file."
   (interactive)
   (find-file (f-join rangoli/notes-dir "people.org")))
-
-(rangoli/set-leader-key "o p" 'swa/jump-people "people file")
 
 (defun swa/jump-tickler ()
   "Jump to tickler file."
   (interactive)
   (find-file (f-join rangoli/notes-dir "tickler.org")))
 
+;; Key bindings
+
 (rangoli/set-leader-key "o l" 'swa/jump-tickler "tickler file")
+(rangoli/set-leader-key "o p" 'swa/jump-people "people file")
+(rangoli/set-leader-key "o t" 'swa/jump-tasks "tasks file")
+(rangoli/set-leader-key "o w" 'swa/jump-work "work file")
+(rangoli/set-leader-key "o W" 'swa/jump-work-inbox "work inbox file")
 
 (provide 'swa-org)
 ;; swa-org.el ends here
