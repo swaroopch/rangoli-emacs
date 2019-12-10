@@ -215,8 +215,8 @@
 (defun rangoli/launch-terminal ()
   (interactive)
   (pcase system-type
-    ('darwin (start-process "terminal" "*terminal*" "open" "-a" "Terminal"))
-    ('gnu/linux (start-process "terminal" "*terminal*" "gnome-terminal"))))
+    ('darwin (start-process "terminal" "*terminal*" "open" "-a" "Terminal" default-directory))
+    ('gnu/linux (start-process "terminal" "*terminal*" "gnome-terminal" default-directory))))
 
 (rangoli/set-leader-key ";" 'rangoli/launch-terminal "external terminal")
 
