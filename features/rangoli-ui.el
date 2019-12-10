@@ -218,8 +218,7 @@
     ('darwin (start-process "terminal" "*terminal*" "open" "-a" "Terminal"))
     ('gnu/linux (start-process "terminal" "*terminal*" "gnome-terminal"))))
 
-(rangoli/set-leader-key ";" 'shell "shell")
-(rangoli/set-leader-key ":" 'rangoli/launch-terminal "external terminal")
+(rangoli/set-leader-key ";" 'rangoli/launch-terminal "external terminal")
 
 (rangoli/set-leader-key "a c" 'quick-calc "calculator")
 (rangoli/set-leader-key "a t c" 'calendar "show calendar")
