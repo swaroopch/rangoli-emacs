@@ -371,7 +371,9 @@ body {
 
 ;; https://orgmode.org/worg/org-contrib/babel/languages/ob-doc-python.html
 (org-babel-do-load-languages
- 'org-babel-load-languages '((python . t)))
+ 'org-babel-load-languages '((C . t)
+                             (python . t)
+                             (shell . t)))
 
 (defun rangoli/insert-from-clipboard-markdown-as-orgmode ()
   (interactive)
