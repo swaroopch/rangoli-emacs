@@ -42,7 +42,8 @@
   (swa/org-files-in-directory rangoli/notes-dir))
 
 (defun swa/org-files-work ()
-  (list (concat rangoli/notes-dir "work.org")))
+  (list (concat rangoli/notes-dir "work.org")
+        (concat rangoli/notes-dir "work-inbox.org")))
 
 (setq org-agenda-files (rangoli/org-files))
 
