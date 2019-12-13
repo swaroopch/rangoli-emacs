@@ -38,7 +38,6 @@
       'light)))
 
 (defun rangoli/day-time? ()
-  "Is now between 8am and 5pm?"
   (let* ((now (ts-now))
          (hour (ts-hour now))
          (month (ts-month now)))
