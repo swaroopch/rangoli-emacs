@@ -170,6 +170,12 @@ For example, assuming you have cloned /this/ repository to =~/rangoli-emacs=, he
 
      ((python-mode . ((pyvenv-workon . "secretproject"))))
    #+end_src
+*** Python + lsp-mode
+Install the Python language server:
+
+#+begin_src sh
+  pip install -U 'python-language-server[all]'
+#+end_src
 ** Known Issues
 *** OrgMode : =Invalid function: org-preserve-local-variables=
 See https://github.com/syl20bnr/spacemacs/issues/11801
