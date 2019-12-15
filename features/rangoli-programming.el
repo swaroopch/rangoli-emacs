@@ -74,6 +74,11 @@
   (setq-default flycheck-emacs-lisp-load-path 'inherit)
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
 
+;; https://github.com/flycheck/flycheck-inline
+(straight-use-package 'flycheck-inline)
+(with-eval-after-load 'flycheck
+  (add-hook 'flycheck-mode-hook #'flycheck-inline-mode))
+
 (rangoli/set-leader-key "T e" 'flycheck-list-errors "errors (flycheck)")
 
 ;;; company
