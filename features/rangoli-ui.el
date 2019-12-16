@@ -214,9 +214,10 @@
 
 (defun rangoli/launch-terminal ()
   (interactive)
-  (pcase system-type
-    ('darwin (start-process "terminal" "*terminal*" "open" "-a" "Terminal" default-directory))
-    ('gnu/linux (start-process "terminal" "*terminal*" "gnome-terminal" default-directory))))
+  (let ((current-dir (if buffer-file-name default-directory (getenv "HOME"))))
+    (pcase system-type
+      ('darwin (start-process "terminal" "*terminal*" "open" "-a" "Terminal" current-dir))
+      ('gnu/linux (start-process "terminal" "*terminal*" "gnome-terminal" current-dir)))))
 
 (rangoli/set-leader-key ";" 'rangoli/launch-terminal "external terminal")
 
