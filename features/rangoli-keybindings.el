@@ -20,7 +20,7 @@
       echo-keystrokes 0.02
       which-key-idle-delay 0.4)
 (which-key-mode +1)
-(which-key-setup-side-window-right-bottom)
+(which-key-setup-side-window-bottom)
 (diminish 'which-key-mode)
 
 (defun rangoli/declare-prefix (key name)
