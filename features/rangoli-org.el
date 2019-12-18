@@ -304,13 +304,13 @@ body {
             (rangoli/declare-prefix-for-mode "i" "insert")
             (rangoli/set-local-leader-key "i a" 'rangoli/choose-file-to-move-and-insert-attachment-link "attach, insert link")
             (rangoli/set-local-leader-key "i A" 'rangoli/choose-file-to-move-rename-unique-and-insert-attachment-link "rename, attach, insert link")
-            (rangoli/set-local-leader-key "i e" 'counsel-org-entity "entity")
-            (rangoli/set-local-leader-key "i f" 'org-set-effort "effort")
+            (rangoli/set-local-leader-key "i e" 'org-set-effort "effort")
             (rangoli/set-local-leader-key "i h" 'org-insert-heading "heading")
             (rangoli/set-local-leader-key "i n" 'org-add-note "note")
             (rangoli/set-local-leader-key "i p" 'org-set-property "property")
             (rangoli/set-local-leader-key "i s" 'org-insert-structure-template "structure template")
             (rangoli/set-local-leader-key "i t" 'counsel-org-tag "tag")
+            (rangoli/set-local-leader-key "i y" 'counsel-org-entity "entity")
 
             (rangoli/set-local-leader-key "j" 'counsel-outline "jump")
 
