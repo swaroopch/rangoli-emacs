@@ -27,8 +27,6 @@
 (setq
  org-startup-indented t
 
- org-startup-folded nil
-
  org-image-actual-width 500
 
  org-tags-column 100
