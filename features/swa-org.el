@@ -121,8 +121,14 @@
   (interactive)
   (find-file (f-join rangoli/notes-dir "tickler.org")))
 
+(defun swa/jump-bookmarks ()
+  "Jump to bookmarks file."
+  (interactive)
+  (find-file (f-join rangoli/notes-dir "bookmarks.org")))
+
 ;; Key bindings
 
+(rangoli/set-leader-key "o b" 'swa/jump-bookmarks "bookmarks file")
 (rangoli/set-leader-key "o l" 'swa/jump-tickler "tickler file")
 (rangoli/set-leader-key "o p" 'swa/jump-people "people file")
 (rangoli/set-leader-key "o t" 'swa/jump-tasks "tasks file")
