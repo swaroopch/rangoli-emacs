@@ -2,6 +2,9 @@
 
 ;;; text manipulation
 
+;; make `sort-lines` case-insensitive
+(setq sort-fold-case t)
+
 (rangoli/set-leader-key "t s" 'query-replace)
 (rangoli/set-leader-key "t S" 'replace-string)
 (rangoli/set-leader-key "t r" 'query-replace-regexp)
