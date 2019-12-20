@@ -219,7 +219,11 @@
                        (getenv "HOME"))))
     (pcase system-type
       ('darwin (start-process "terminal" "*terminal*" "open" "-a" "Terminal" current-dir))
-      ('gnu/linux (start-process "terminal" "*terminal*" "gnome-terminal" current-dir)))))
+      ;; https://github.com/jwilm/alacritty
+      ('gnu/linux (if (executable-find "alacritty")
+                      ;; alacritty does not take parameters
+                      (start-process "terminal" "*terminal*" (executable-find "alacritty"))
+                    (start-process "terminal" "*terminal*" "gnome-terminal" current-dir))))))
 
 (rangoli/set-leader-key ";" 'rangoli/launch-terminal "external terminal")
 
