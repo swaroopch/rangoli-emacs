@@ -213,13 +213,16 @@
       (error (s-lex-format "File does not exist : ${rangoli/file-name}")))))
 
 (defun rangoli/launch-terminal ()
+  "Prefer https://github.com/jwilm/alacritty terminal"
   (interactive)
   (let ((current-dir (if buffer-file-name
                          default-directory
                        (getenv "HOME"))))
     (pcase system-type
-      ('darwin (start-process "terminal" "*terminal*" "open" "-a" "Terminal" current-dir))
-      ;; https://github.com/jwilm/alacritty
+      ('darwin (if (executable-find "alacritty")
+                   ;; alacritty does not take parameters
+                   (start-process "terminal" "*terminal*" "open" "-a" (executable-find "alacritty"))
+                 (start-process "terminal" "*terminal*" "open" "-a" "Terminal" current-dir)))
       ('gnu/linux (if (executable-find "alacritty")
                       ;; alacritty does not take parameters
                       (start-process "terminal" "*terminal*" (executable-find "alacritty"))
