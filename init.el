@@ -61,8 +61,8 @@
 
 ;; You probably /do not/ want these
 
-(require 'swa-org)
-(require 'swa-bookmarks)
+;; (require 'swa-org)
+;; (require 'swa-bookmarks)
 (require 'swa-personal)
 
 (let ((rangoli-private-config (f-join rangoli/private-emacs-config-dir "init.el")))
