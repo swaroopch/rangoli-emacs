@@ -63,7 +63,7 @@
 
 ;; (require 'swa-org)
 ;; (require 'swa-bookmarks)
-(require 'swa-personal)
+;; (require 'swa-personal)
 
 (let ((rangoli-private-config (f-join rangoli/private-emacs-config-dir "init.el")))
   (when (f-exists? rangoli-private-config)
