@@ -94,7 +94,7 @@ time sudo make install
 #+end_src
 **** macOS
 #+begin_src sh
-  brew cask install font-noto-mono
+  brew cask install homebrew/cask-fonts/font-noto-mono
 #+end_src
 *** macOS : Install command for notifications
 #+begin_src sh
