@@ -7,6 +7,9 @@
 ;; https://github.com/tigersoldier/company-lsp
 ;; https://github.com/emacs-lsp/dap-mode
 
+;; https://twitter.com/yonchovski/status/1208476565715202048
+(setq read-process-output-max (* 1024 1024))
+
 (straight-use-package 'lsp-mode)
 (require 'lsp-mode)
 (setq lsp-prefer-flymake nil
