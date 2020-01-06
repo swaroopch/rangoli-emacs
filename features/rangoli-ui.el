@@ -214,9 +214,9 @@
 
 (defun rangoli/launch-terminal ()
   (interactive)
-  (let ((current-dir (if buffer-file-name
-                         default-directory
-                       (getenv "HOME"))))
+  (let ((current-dir (f-long (cond (buffer-file-name default-directory)
+                                   ((eq major-mode 'dired-mode) default-directory)
+                                   (t (getenv "HOME"))))))
     (pcase system-type
       ('darwin (start-process "terminal" "*terminal*" "open" "-a" "Terminal" current-dir))
       ('gnu/linux (start-process "terminal" "*terminal*" "gnome-terminal" current-dir)))))
