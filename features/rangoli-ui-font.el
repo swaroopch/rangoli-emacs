@@ -12,7 +12,7 @@
 ;; https://www.ibm.com/plex/
 ;; Linux : `sudo apt install fonts-ibm-plex'
 ;; macOS : `brew tap homebrew/cask-fonts; brew cask install font-ibm-plex'
-(defvar rangoli/default-font-name "IBM Plex Mono")
+(defvar rangoli/default-font-name "Noto Mono")
 (defvar rangoli/default-font-size (pcase system-type
                                     ('darwin 16)
                                     ('gnu/linux 18)
