@@ -17,13 +17,9 @@
 (setq projectile-switch-project-action #'projectile-commander)
 (setq projectile-completion-system 'ivy)
 
-;;; Search with ripgrep
+;;; Search with silversearcher
 
-(straight-use-package 'ripgrep)
-(def-projectile-commander-method ?i
-  "Run rg (ripgrep) on project."
-    (call-interactively 'projectile-ripgrep))
-(rangoli/set-leader-key "/" 'counsel-rg "search")
+(rangoli/set-leader-key "/" 'counsel-ag "search")
 
 ;;; Treemacs
 
